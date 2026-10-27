@@ -1,846 +1,329 @@
-```html
 <!DOCTYPE html>
-<htmllang=»ru» class=»scroll-smooth»>
+<htmllang="ru">
 <head>
-<metacharset=»UTF-8»>
-<metaname=»viewport» content=»width=device-width, initial-scale=1.0»>
-<title>Антон Владимирович — Презентации и Доклады на любую тему за 200 ₽</title>
-<!—Tailwind CSS CDN 
-<scriptsrc=»https://cdn.tailwindcss.com»></script>
-<!—FontAwesomeIcons
-<linkrel=»stylesheet» href=»https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css»>
-<!—GoogleFontsInter
-<linkrel=»preconnect» href=»https://fonts.googleapis.com»>
-<linkrel=»preconnect» href=»https://fonts.gstatic.com» crossorigin>
-<link href=»https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap» rel=»stylesheet»>
-
-<script>
-Tailwind.config = {
-darkMode: 'class',
-theme: {
-extend: {
-colors: {
-brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            900: '#064e3b',
-                        },
-Accent: {
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                        },
-Dark: {
-Bg: '#0b0f17',
-Card: '#131c2e',
-Border: '#1e293b',
-                        }
-                    },
-fontFamily: {
-sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-</script>
-
+<metacharset="UTF-8">
+<metaname="viewport" content="width=device-width, initial-scale=1.0">
+<title>Антон Владимирович — Презентации и Доклады на заказ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-Body {
-Background-color: #0b0f17;
-Color: #f3f4f6;
-Font-family: 'Inter', sans-serif;
-Overflow-x: hidden;
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
         }
 
-        /* CustomGlassmorphism */
-        .glass-panel {
-Background: rgba(19, 28, 46, 0.7);
-Backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-Border: 1px solidrgba(255, 255, 255, 0.08);
+        * {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Inter', sans-serif;
         }
 
-        .glass-card {
-Background: rgba(19, 28, 46, 0.5);
-Backdrop-filter: blur(8px);
-Border: 1px solidrgba(255, 255, 255, 0.05);
-Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+body {
+background-color: var(--bg-color);
+color: var(--text-main);
+line-height: 1.6;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
         }
 
-        .glass-card:hover {
-Border-color: rgba(16, 185, 129, 0.4);
-Transform: translateY(-4px);
-Box-shadow: 0 12px 30px -10px rgba(10, 185, 129, 0.15);
+header {
+padding: 2rem 1rem;
+text-align: center;
+border-bottom: 1px solidvar(--border-color);
+background: rgba(30, 41, 59, 0.5);
+backdrop-filter: blur(10px);
         }
 
-        /* GlowingGradients */
-        .glow-effect {
-Position: relative;
+        .badge {
+display: inline-block;
+background: rgba(56, 189, 248, 0.1);
+color: var(--accent-color);
+padding: 0.4rem 1rem;
+border-radius: 50px;
+font-size: 0.9rem;
+font-weight: 600;
+margin-bottom: 1rem;
+border: 1px solidrgba(56, 189, 248, 0.2);
         }
 
-        .glow-effect::before {
-Content: '';
-Position: absolute;
-Top: -2px;
-Left: -2px;
-Right: -2px;
-Bottom: -2px;
-Background: linear-gradient(45deg, #10b981, #0ea5e9, #6366f1);
-Border-radius: inherit;
-            z-index: -1;
-opacity: 0;
-transition: opacity 0.3s ease;
+        h1 {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .glow-effect:hover::before {
-Opacity: 1;
+p.subtitle {
+color: var(--text-muted);
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto;
         }
 
-        /* CustomScrollbar */
-        ::-webkit-scrollbar {
-Width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-Background: #0b0f17;
-        }
-        ::-webkit-scrollbar-thumb {
-Background: #1e293b;
-Border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-Background: #10b981;
+main {
+max-width: 900px;
+margin: 0 auto;
+padding: 3rem 1.5rem;
+flex: 1;
+width: 100%;
         }
 
-        /* Toastnotification */
-        #toast {
-Visibility: hidden;
-Min-width: 250px;
-Margin-left: -125px;
-Transform: translateY(100px);
-Transition: transform 0.3s, visibility 0.3s;
+        .price-card {
+background: var(--card-bg);
+border: 1px solidvar(--border-color);
+border-radius: 1rem;
+padding: 2.5rem;
+text-align: center;
+margin-bottom: 3rem;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
         }
-        #toast.show {
-Visibility: visible;
-Transform: translateY(0);
+
+        .price-tag {
+font-size: 3rem;
+font-weight: 700;
+color: var(--accent-color);
+margin: 1rem 0;
+        }
+
+        .price-tagspan {
+font-size: 1.2rem;
+color: var(--text-muted);
+font-weight: 400;
+        }
+
+        .features {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-bottom: 3rem;
+        }
+
+        .feature-item {
+background: var(--card-bg);
+border: 1px solidvar(--border-color);
+padding: 1.5rem;
+border-radius: 0.75rem;
+transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+transform: translateY(-4px);
+        }
+
+        .feature-item i {
+font-size: 1.8rem;
+color: var(--accent-color);
+margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+color: var(--text-muted);
+font-size: 0.95rem;
+        }
+
+        /* Стили для примеров */
+        .examples-section {
+margin-bottom: 3rem;
+        }
+
+        .section-title {
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+text-align: center;
+        }
+
+        .examples-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 1.5rem;
+        }
+
+        .example-card {
+background: var(--card-bg);
+border: 1px solidvar(--border-color);
+border-radius: 0.75rem;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+        }
+
+        .example-header {
+background: rgba(56, 189, 248, 0.05);
+padding: 1.2rem;
+border-bottom: 1px solidvar(--border-color);
+        }
+
+        .example-header h3 {
+font-size: 1.1rem;
+color: var(--accent-color);
+        }
+
+        .example-body {
+padding: 1.2rem;
+color: var(--text-muted);
+font-size: 0.95rem;
+flex: 1;
+        }
+
+        .cta-section {
+background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
+border: 1px solidvar(--border-color);
+border-radius: 1rem;
+padding: 2.5rem;
+text-align: center;
+        }
+
+        .cta-buttons {
+display: flex;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+margin-top: 1.5rem;
+        }
+
+        .btn {
+display: inline-flex;
+align-items: center;
+gap: 0.75rem;
+padding: 0.8rem 1.8rem;
+border-radius: 0.5rem;
+font-weight: 600;
+text-decoration: none;
+transition: all 0.2s ease;
+        }
+
+        .btn-tg {
+background-color: var(--accent-color);
+color: #0f172a;
+        }
+
+        .btn-tg:hover {
+background-color: var(--accent-hover);
+transform: translateY(-2px);
+        }
+
+        .btn-email {
+background-color: transparent;
+color: var(--text-main);
+border: 1px solidvar(--border-color);
+        }
+
+        .btn-email:hover {
+background-color: rgba(255, 255, 255, 0.05);
+border-color: var(--text-muted);
+        }
+
+footer {
+text-align: center;
+padding: 2rem;
+color: var(--text-muted);
+font-size: 0.9rem;
+border-top: 1px solidvar(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .price-tag { font-size: 2.2rem; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
 </style>
 </head>
-<bodyclass=»antialiased selection:bg-brand-500 selection:text-white»>
+<body>
 
-<!—ToastNotification
-<div id=»toast» class=»fixed bottom-6 left-1/2 z-50 glass-paneltext-white px-6 py-3 rounded-full shadow-2xl flexitems-center gap-3 border border-brand-500/50»>
-<i class=»fa-solidfa-circle-check text-brand-400 text-lg»></i>
-<spanid=»toast-message» class=»text-smfont-medium»>Текст скопирован!</span>
-</div>
-
-<!—Header / Navbar
-<headerclass=»fixed top-0 left-0 right-0 z-40 glass-panelborder-b border-white/10»>
-<div class=»max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flexitems-centerjustify-between»>
-
-<!—Logo / Name
-<a href=»#» class=»flexitems-center gap-3 group»>
-<div class=»w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flexitems-centerjustify-centerfont-boldtext-whiteshadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform»>
-                    АВ
-</div>
-<div class=»flexflex-col»>
-<spanclass=»font-boldtext-lgleading-tighttracking-tighttext-white group-hover:text-brand-400 transition-colors»>
-                        Антон Владимирович
-</span>
-<spanclass=»text-xs text-gray-400 font-medium»>Презентации & Доклады</span>
-</div>
-</a>
-
-<!—DesktopNavLinks
-<navclass=»hiddenmd:flexitems-center gap-8 text-smfont-medium text-gray-300»>
-<a href=»#about» class=»hover:text-brand-400 transition-colors»>Обо мне</a>
-<a href=»#services» class=»hover:text-brand-400 transition-colors»>Услуги</a>
-<a href=»#portfolio» class=»hover:text-brand-400 transition-colors»>Примеры работ</a>
-<a href=»#calculator» class=»hover:text-brand-400 transition-colors»>Калькулятор</a>
-<a href=»#reviews» class=»hover:text-brand-400 transition-colors»>Отзывы</a>
-<a href=»#contacts» class=»hover:text-brand-400 transition-colors»>Контакты</a>
-</nav>
-
-<!—ActionButton& TG 
-<div class=»hiddensm:flexitems-center gap-4»>
-<div class=»px-3 py-1.5 rounded-lg bg-brand-500/10 border border-brand-500/30 text-brand-400 font-boldtext-sm»>
-                    200 ₽ / работа
-</div>
-<a href=»https://t.me/shoch7» target=»_blank» class=»flexitems-center gap-2 bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-whitetext-smfont-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 transition-allhover:-translate-y-0.5»>
-<i class=»fa-brandsfa-telegramtext-base»></i>
-<span>@shoch7</span>
-</a>
-</div>
-
-<!—MobileMenuToggle
-<buttonid=»mobile-menu-btn» class=»md:hidden p-2 rounded-lg text-gray-400 hover:text-whitehover:bg-white/5 focus:outline-none»>
-<i class=»fa-solidfa-barstext-xl»></i>
-</button>
-</div>
-
-<!—MobileMenuDropdown
-<div id=»mobile-menu» class=»hiddenmd:hiddenglass-panelborder-t border-white/10 px-4 pt-4 pb-6 space-y-3»>
-<a href=»#about» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Обо мне</a>
-<a href=»#services» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Услуги</a>
-<a href=»#portfolio» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Примеры работ</a>
-<a href=»#calculator» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Калькулятор заказа</a>
-<a href=»#reviews» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Отзывы</a>
-<a href=»#contacts» class=»mobile-nav-linkblock px-3 py-2 rounded-lgtext-basefont-medium text-gray-300 hover:text-whitehover:bg-white/5»>Контакты</a>
-<div class=»pt-4 flexflex-col gap-3 border-t border-white/10»>
-<div class=»text-center py-2 rounded-lg bg-brand-500/10 text-brand-400 font-boldtext-sm»>
-                    Фиксированная цена: 200 ₽
-</div>
-<a href=»https://t.me/shoch7» target=»_blank» class=»flexitems-centerjustify-center gap-2 bg-gradient-to-r from-brand-500 to-accent-500 text-whitefont-semibold py-3 rounded-xl»>
-<i class=»fa-brandsfa-telegramtext-lg»></i>
-<span>Написать в Telegram (@shoch7)</span>
-</a>
-</div>
-</div>
+<header>
+<spanclass="badge">Качественно &bull; Быстро &bull; Доступно</span>
+<h1>Антон Владимирович</h1>
+<p class="subtitle">Разработка стильных презентаций и подготовка качественных докладов на любую тему</p>
 </header>
 
-<mainclass=»pt-24»>
-<!—HeroSection
-<sectionclass=»relativemin-h-[90vh] flexitems-centerjustify-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden»>
-<!—BackgroundOrbs
-<div class=»absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-fullblur-[140px] pointer-events-none»></div>
-<div class=»absolute bottom-10 right-10 w-[400px] h-[400px] bg-accent-500/10 rounded-fullblur-[120px] pointer-events-none»></div>
-
-<div class=»max-w-5xl mx-autotext-centerrelative z-10»>
-<!—Badge
-<div class=»inline-flexitems-center gap-2 px-4 py-2 rounded-fullglass-panelborder border-brand-500/30 mb-8 animate-bounce»>
-<spanclass=»flex h-2 w-2 rounded-full bg-brand-400 animate-ping»></span>
-<spanclass=»text-xssm:text-smfont-semiboldtracking-wide text-brand-300 uppercase»>Презентации и Доклады • Любая тема</span>
+<main>
+<div class="price-card">
+<h2>Фиксированная стоимость</h2>
+<div class="price-tag">200 ₽ <span>/ за любую работу</span></div>
+<p style="color: var(--text-muted);">Без скрытых переплат. Быстрое выполнение в сжатые сроки.</p>
 </div>
 
-<!—MainHeadline
-<h1 class=»text-4xl sm:text-6xl lg:text-7xl font-extraboldtext-whitetracking-tightleading-tight mb-6»>
-                    Качественная работа <brclass=»hiddensm:inline»>
-                    Всего за <spanclass=»bg-gradient-to-r from-brand-400 via-accent-400 to-brand-500 bg-clip-texttext-transparentunderline decoration-brand-500/40»>200 Рублей</span>
-</h1>
+<div class="features">
+<div class="feature-item">
+<i class="fa-solidfa-file-powerpoint"></i>
+<h3>Презентации</h3>
+<p>Современный дизайн, красивое оформление слайдов, структурированная подача материала.</p>
+</div>
+<div class="feature-item">
+<i class="fa-solidfa-pen-nib"></i>
+<h3>Доклады и проекты</h3>
+<p>Проработка темы любой сложности для школы, колледжа или вуза с учетом ваших требований.</p>
+</div>
+<div class="feature-item">
+<i class="fa-solidfa-clock"></i>
+<h3>Быстрые сроки</h3>
+<p>Оперативное выполнение задач точно в срок. Поддержка связи на всех этапах работы.</p>
+</div>
+</div>
 
-<!—Subtitle
-<p class=»max-w-2xl mx-autotext-lgsm:text-xl text-gray-300 font-light mb-10 leading-relaxed»>
-                    Здравствуйте! Меня зовут <strongclass=»text-whitefont-semibold»>Антон Владимирович</strong>. Я создаю уникальные, стильные презентации и доклады для школы, колледжа, ВУЗа или бизнеса.
-</p>
+<!-- Новый блок с примерами -->
+<div class="examples-section">
+<h2 class="section-title">Примеры направлений работ</h2>
+<div class="examples-grid">
+<div class="example-card">
+<div class="example-header">
+<h3>История и Обществознание</h3>
+</div>
+<div class="example-body">
+                        Презентация на 12–15 слайдов с инфографикой, ключевыми датами, выводами и готовым текстом доклада для выступления.
+</div>
+</div>
+<div class="example-card">
+<div class="example-header">
+<h3>Экономика и Бизнес</h3>
+</div>
+<div class="example-body">
+                        Структурированный проект с анализом рынка, таблицами, графиками и понятной структурой для сдачи в вузе или колледже.
+</div>
+</div>
+<div class="example-card">
+<div class="example-header">
+<h3>Биология, География и др.</h3>
+</div>
+<div class="example-body">
+                        Тематические доклады с глубоким погружением в тему, подбором интересных фактов, списком литературы и аккуратным оформлением.
+</div>
+</div>
+</div>
+</div>
 
-<!—CTA Buttons
-<div class=»flexflex-colsm:flex-rowitems-centerjustify-center gap-4 sm:gap-6 mb-16»>
-<a href=»https://t.me/shoch7» target=»_blank» class=»w-fullsm:w-autoflexitems-centerjustify-center gap-3 bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-whitefont-boldtext-lg px-8 py-4 rounded-2xl shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-1 transition-all»>
-<i class=»fa-brandsfa-telegram text-2xl»></i>
-<span>Заказать в Telegram (@shoch7)</span>
+<div class="cta-section">
+<h2>Заказать работу</h2>
+<p style="color: var(--text-muted); margin-top: 0.5rem;">Свяжитесь со мной удобным для вас способом, чтобы обсудить детали задачи:</p>
+<div class="cta-buttons">
+<a href="https://t.me/shoch7" target="_blank" class="btnbtn-tg">
+<i class="fa-brandsfa-telegram"></i>Telegram (@shoch7)
 </a>
-<a href=»#calculator» class=»w-fullsm:w-autoflexitems-centerjustify-center gap-2 glass-panelhover:bg-white/10 text-whitefont-semiboldtext-lg px-8 py-4 rounded-2xl borderborder-white/15 transition-all»>
-<i class=»fa-solidfa-calculator text-brand-400»></i>
-<span>Рассчитать проект</span>
-</a>
-</div>
-
-<!—QuickStatsGrid
-<div class=»grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-white/10»>
-<div class=»p-4 rounded-2xl glass-card»>
-<div class=»text-2xl sm:text-3xl font-bold text-brand-400 mb-1»>200 ₽</div>
-<div class=»text-xssm:text-sm text-gray-400»>Фиксированная цена</div>
-</div>
-<div class=»p-4 rounded-2xl glass-card»>
-<div class=»text-2xl sm:text-3xl font-bold text-brand-400 mb-1»>От 2 часов</div>
-<div class=»text-xssm:text-sm text-gray-400»>Быстрое выполнение</div>
-</div>
-<div class=»p-4 rounded-2xl glass-card»>
-<div class=»text-2xl sm:text-3xl font-bold text-brand-400 mb-1»>100%</div>
-<div class=»text-xssm:text-sm text-gray-400»>Уникальность темы</div>
-</div>
-<div class=»p-4 rounded-2xl glass-card»>
-<div class=»text-2xl sm:text-3xl font-bold text-brand-400 mb-1»>Любая тема</div>
-<div class=»text-xssm:text-sm text-gray-400»>Школа, ВУЗ, Бизнес</div>
-</div>
-</div>
-</div>
-</section>
-
-<!—AboutSection
-<sectionid=»about» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto»>
-<div class=»grid grid-cols-1 lg:grid-cols-12 gap-12 items-center»>
-
-<!—LeftBioCard
-<div class=»lg:col-span-5 relative»>
-<div class=»glass-panel p-8 rounded-3xl relative z-10 borderborder-white/10 overflow-hidden»>
-<div class=»absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/20 rounded-full blur-2xl»></div>
-
-<div class=»w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-500 flexitems-centerjustify-center text-3xl font-boldtext-white mb-6 shadow-lg shadow-brand-500/30»>
-                            АВ
-</div>
-
-<h3 class=»text-2xl font-boldtext-white mb-2»>Антон Владимирович</h3>
-<p class=»text-brand-400 font-mediumtext-sm mb-6»>Специалист по подготовке презентаций и текстов</p>
-
-<p class=»text-gray-300 leading-relaxedtext-sm mb-6»>
-                            Я помогаю школьникам, студентам и специалистам экономить время и получать отличные оценки и отзывы за их выступления. Подготовлю понятный структурированный доклад или красочную презентацию в PowerPoint / PDF.
-</p>
-
-<div class=»space-y-3 pt-4 border-t border-white/10»>
-<div class=»flexitems-center gap-3 text-sm text-gray-300»>
-<i class=»fa-solidfa-circle-check text-brand-400»></i>
-<span>Сбор актуальной информации по вашей теме</span>
-</div>
-<div class=»flexitems-center gap-3 text-sm text-gray-300»>
-<i class=»fa-solidfa-circle-check text-brand-400»></i>
-<span>Грамотный текст без воды и ошибок</span>
-</div>
-<div class=»flexitems-center gap-3 text-sm text-gray-300»>
-<i class=»fa-solidfa-circle-check text-brand-400»></i>
-<span>Современное визуальное оформление слайдов</span>
-</div>
-</div>
-</div>
-</div>
-
-<!—RightBenefits
-<div class=»lg:col-span-7 space-y-6»>
-<div class=»inline-block px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>
-                        Почему именно я?
-</div>
-<h2 class=»text-3xl sm:text-4xl font-extraboldtext-white»>
-                        Ваш проект в надежных руках: качественно, быстро и без переплат
-</h2>
-<p class=»text-gray-400 leading-relaxed»>
-                        Никаких скрытых наценок. Фиксированная стоимость <strong>200 рублей</strong> за всю услугу делает заказ доступным каждому школьнику и студенту.
-</p>
-
-<div class=»grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4»>
-<div class=»p-5 rounded-2xl glass-card»>
-<i class=»fa-solidfa-bolt text-brand-400 text-2xl mb-3»></i>
-<h4 class=»text-lgfont-boldtext-white mb-1»>Срочное выполнение</h4>
-<p class=»text-xs text-gray-400»>Нужно завтра с утра? Сделай заказ сейчас, и всё будет ready вовремя.</p>
-</div>
-<div class=»p-5 rounded-2xl glass-card»>
-<i class=»fa-solidfa-palette text-brand-400 text-2xl mb-3»></i>
-<h4 class=»text-lgfont-boldtext-white mb-1»>Индивидуальный стиль</h4>
-<p class=»text-xs text-gray-400»>Каждая презентация подбирается под ваш предмет или аудиторию.</p>
-</div>
-<div class=»p-5 rounded-2xl glass-card»>
-<i class=»fa-solidfa-book-open text-brand-400 text-2xl mb-3»></i>
-<h4 class=»text-lgfont-boldtext-white mb-1»>Любой предмет</h4>
-<p class=»text-xs text-gray-400»>История, физика, биология, литература, экономика или IT.</p>
-</div>
-<div class=»p-5 rounded-2xl glass-card»>
-<i class=»fa-solidfa-hand-holding-dollar text-brand-400 text-2xl mb-3»></i>
-<h4 class=»text-lgfont-boldtext-white mb-1»>Честная цена</h4>
-<p class=»text-xs text-gray-400»>Ровно 200 ₽ за готовую работу без каких-либо доплат.</p>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<!—ServicesSection
-<sectionid=»services» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-autoborder-t border-white/5»>
-<div class=»text-center max-w-3xl mx-auto mb-16»>
-<spanclass=»px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>Что вы можете заказать</span>
-<h2 class=»text-3xl sm:text-4xl font-extraboldtext-white mt-3 mb-4»>Услуги и форматы работ</h2>
-<p class=»text-gray-400»>Выберите то, что необходимо именно вам — всё выполняется под ключ.</p>
-</div>
-
-<div class=»grid grid-cols-1 md:grid-cols-3 gap-8»>
-<!—Card 1 
-<div class=»glass-card p-8 rounded-3xl flexflex-coljustify-between»>
-<div>
-<div class=»w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flexitems-centerjustify-center text-brand-400 text-2xl mb-6»>
-<i class=»fa-solidfa-file-powerpoint»></i>
-</div>
-<h3 class=»text-xl font-boldtext-white mb-3»>Мультимедийная презентация</h3>
-<p class=»text-gray-400 text-sm mb-6 leading-relaxed»>
-                            Красивые слайды с текстом, ключевыми тезисами, качественными изображениями, графиками и диаграммами. Подходит для защиты проектов, уроков и лекций.
-</p>
-<ulclass=»space-y-2 text-xs text-gray-300 mb-8»>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Формат .pptx или .pdf</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Современный дизайн</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Адаптация под выступление</li>
-</ul>
-</div>
-<div class=»pt-4 border-t border-white/10 flexitems-centerjustify-between»>
-<spanclass=»text-2xl font-extraboldtext-white»>200 ₽</span>
-<a href=»https://t.me/shoch7» target=»_blank» class=»text-xsfont-semibold text-brand-400 hover:text-brand-300 flexitems-center gap-1»>
-<span>Заказать</span><i class=»fa-solidfa-arrow-right»></i>
+<a href="mailto:gorbunovartemavich@gmail.com" class="btnbtn-email">
+<i class="fa-solidfa-envelope"></i> Написать на почту
 </a>
 </div>
 </div>
-
-<!—Card 2 
-<div class=»glass-card p-8 rounded-3xl flexflex-coljustify-between border-brand-500/30 relative»>
-<div class=»absolute -top-3 right-6 bg-gradient-to-r from-brand-500 to-accent-500 text-whitetext-[10px] font-bold px-3 py-1 rounded-fulluppercasetracking-widershadow-md»>
-                        Популярное
-</div>
-<div>
-<div class=»w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flexitems-centerjustify-center text-brand-400 text-2xl mb-6»>
-<i class=»fa-solidfa-file-lines»></i>
-</div>
-<h3 class=»text-xl font-boldtext-white mb-3»>Текстовый доклад / Реферат</h3>
-<p class=»text-gray-400 text-sm mb-6 leading-relaxed»>
-                            Грамотно написанный и оформленный текст доклада по вашей теме с введением, основной частью, выводами и списком литературы.
-</p>
-<ulclass=»space-y-2 text-xs text-gray-300 mb-8»>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Формат Word (.docx)</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Проверка уникальности</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Готовый текст для чтения</li>
-</ul>
-</div>
-<div class=»pt-4 border-t border-white/10 flexitems-centerjustify-between»>
-<spanclass=»text-2xl font-extraboldtext-white»>200 ₽</span>
-<a href=»https://t.me/shoch7» target=»_blank» class=»text-xsfont-semibold text-brand-400 hover:text-brand-300 flexitems-center gap-1»>
-<span>Заказать</span><i class=»fa-solidfa-arrow-right»></i>
-</a>
-</div>
-</div>
-
-<!—Card 3 
-<div class=»glass-card p-8 rounded-3xl flexflex-coljustify-between»>
-<div>
-<div class=»w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flexitems-centerjustify-center text-brand-400 text-2xl mb-6»>
-<i class=»fa-solidfa-layer-group»></i>
-</div>
-<h3 class=»text-xl font-boldtext-white mb-3»>Комплект: Презентация + Доклад</h3>
-<p class=»text-gray-400 text-sm mb-6 leading-relaxed»>
-                            Полный набор для уверенного выступления: презентация со слайдами плюс готовая речь/доклад, полностью совпадающий по смыслу со слайдами.
-</p>
-<ulclass=»space-y-2 text-xs text-gray-300 mb-8»>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Полное соответствие слайдов и текста</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Шпоры для спикера</li>
-<li class=»flexitems-center gap-2»><i class=»fa-solidfa-check text-brand-400»></i> Максимальная готовность к защите</li>
-</ul>
-</div>
-<div class=»pt-4 border-t border-white/10 flexitems-centerjustify-between»>
-<spanclass=»text-2xl font-extraboldtext-white»>200 ₽</span>
-<a href=»https://t.me/shoch7» target=»_blank» class=»text-xsfont-semibold text-brand-400 hover:text-brand-300 flexitems-center gap-1»>
-<span>Заказать</span><i class=»fa-solidfa-arrow-right»></i>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!—InteractiveCalculator&QuickOrderSection
-<sectionid=»calculator» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto»>
-<div class=»glass-panel p-8 sm:p-12 rounded-3xl borderborder-white/10 relativeoverflow-hidden»>
-<div class=»absolute top-0 right-0 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none»></div>
-
-<div class=»text-center max-w-2xl mx-auto mb-10»>
-<spanclass=»px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>Калькулятор и быстрая заявка</span>
-<h2 class=»text-3xl font-extraboldtext-white mt-3»>Рассчитайте ваш проект</h2>
-<p class=»text-gray-400 text-sm mt-2»>Заполните детали, и сразу отправьте готовое ТЗ Антону Владимировичу</p>
-</div>
-
-<formid=»calc-form» class=»space-y-6»>
-<div class=»grid grid-cols-1 md:grid-cols-2 gap-6»>
-
-<!—TopicInput
-<div class=»space-y-2»>
-<labelclass=»text-xsfont-medium text-gray-300 uppercasetracking-wider»>Тема работы *</label>
-<inputtype=»text» id=»calc-topic» requiredplaceholder=»Например: История развития искусственного интеллекта» class=»w-fullbg-dark-bg/80 borderborder-white/10 rounded-xl px-4 py-3 text-whitetext-smfocus:outline-none focus:border-brand-500 transition-colors»>
-</div>
-
-<!—TypeSelect
-<div class=»space-y-2»>
-<labelclass=»text-xsfont-medium text-gray-300 uppercasetracking-wider»>Тип работы</label>
-<selectid=»calc-type» class=»w-fullbg-dark-bg/80 borderborder-white/10 rounded-xl px-4 py-3 text-whitetext-smfocus:outline-none focus:border-brand-500 transition-colors»>
-<optionvalue=»Презентация»>Презентация</option>
-<optionvalue=»Доклад / Реферат»>Доклад / Реферат</option>
-<optionvalue=»Комплект (Презентация + Доклад)»>Комплект (Презентация + Доклад)</option>
-</select>
-</div>
-
-<!—SlidesCountslider
-<div class=»space-y-2»>
-<div class=»flexjustify-betweenitems-centertext-xsfont-medium text-gray-300»>
-<span>Количество слайдов / страниц:</span>
-<spanid=»slides-val» class=»text-brand-400 font-boldtext-sm»>10-15</span>
-</div>
-<inputtype=»range» id=»slides-slider» min=»5» max=»30» value=»12» class=»w-full accent-brand-500 bg-white/10 rounded-lg h-2 cursor-pointer»>
-</div>
-
-<!—Deadline
-<div class=»space-y-2»>
-<labelclass=»text-xsfont-medium text-gray-300 uppercasetracking-wider»>Срок сдачи</label>
-<selectid=»calc-deadline» class=»w-fullbg-dark-bg/80 borderborder-white/10 rounded-xl px-4 py-3 text-whitetext-smfocus:outline-none focus:border-brand-500 transition-colors»>
-<optionvalue=»Не срочно (2-3 дня)»>Не срочно (2-3 дня)</option>
-<optionvalue=»Завтра»>Завтра</option>
-<optionvalue=»Нужно сегодня / через пару часов»>Срочно (сегодня)</option>
-</select>
-</div>
-</div>
-
-<!—AdditionalDetails
-<div class=»space-y-2»>
-<labelclass=»text-xsfont-medium text-gray-300 uppercasetracking-wider»>Пожелания или комментарии к заказу</label>
-<textareaid=»calc-comment» rows=»3» placeholder=»Укажите особые требования преподавателя, предмет или ваши пожелания…» class=»w-fullbg-dark-bg/80 borderborder-white/10 rounded-xl p-4 text-whitetext-smfocus:outline-none focus:border-brand-500 transition-colorsresize-none»></textarea>
-</div>
-
-<!—Price&SubmitBanner
-<div class=»p-6 rounded-2xl bg-brand-500/10 border border-brand-500/30 flexflex-colsm:flex-rowitems-centerjustify-between gap-4»>
-<div class=»text-centersm:text-left»>
-<div class=»text-xs text-gray-400»>Итоговая стоимость:</div>
-<div class=»text-3xl font-extraboldtext-white»>
-<spanid=»calculated-price»>200</span> ₽ 
-<spanclass=»text-xsfont-normal text-brand-400 bg-brand-500/20 px-2 py-0.5 rounded-md»>Фиксированная цена</span>
-</div>
-</div>
-
-<div class=»flexflex-colsm:flex-row gap-3 w-fullsm:w-auto»>
-<buttontype=»button» onclick=»sendToTelegram()» class=»w-fullsm:w-autoflexitems-centerjustify-center gap-2 bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-whitefont-bold px-6 py-3.5 rounded-xl shadow-lgtransition-allhover:scale-[1.02]»>
-<i class=»fa-brandsfa-telegramtext-lg»></i>
-<span>Отправить в Telegram</span>
-</button>
-<buttontype=»button» onclick=»sendToEmail()» class=»w-fullsm:w-autoflexitems-centerjustify-center gap-2 glass-panelhover:bg-white/10 text-whitefont-semibold px-5 py-3.5 rounded-xl borderborder-white/15 transition-all»>
-<i class=»fa-solidfa-envelope text-brand-400»></i>
-<span>На Email</span>
-</button>
-</div>
-</div>
-</form>
-</div>
-</section>
-
-<!—SamplePortfolio / Examples
-<sectionid=»portfolio» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-autoborder-t border-white/5»>
-<div class=»text-center max-w-3xl mx-auto mb-16»>
-<spanclass=»px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>Примеры работ</span>
-<h2 class=»text-3xl sm:text-4xl font-extraboldtext-white mt-3 mb-4»>Как будут выглядеть ваши слайды</h2>
-<p class=»text-gray-400»>Современный макет, выдержанная цветовая гамма, структурированная подача информации.</p>
-</div>
-
-<!—SamplesGrid
-<div class=»grid grid-cols-1 md:grid-cols-3 gap-6»>
-<!—Mockup 1 
-<div class=»glass-card rounded-2xl overflow-hiddenborderborder-white/10 group»>
-<div class=»bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 p-6 h-52 flexflex-coljustify-betweenrelativeoverflow-hidden»>
-<div class=»absolute top-0 right-0 w-32 h-32 bg-brand-500/20 rounded-fullblur-xl»></div>
-<div class=»flexjustify-betweenitems-centertext-xs text-brand-400 font-mono»>
-<span>#ИСТОРИЯ</span>
-<span>SLIDE 01</span>
-</div>
-<div>
-<h4 class=»text-xl font-boldtext-white mb-2»>Древний Египет: Пирамиды и Культура</h4>
-<p class=»text-xs text-gray-400 line-clamp-2»>Доклад и презентация для 8 класса с детальным разбором архитектуры и артефактов.</p>
-</div>
-<div class=»flexitems-center gap-2 text-[10px] text-gray-300»>
-<spanclass=»bg-white/10 px-2 py-0.5 rounded»>12 слайдов</span>
-<spanclass=»bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded»>Оценка 5/5</span>
-</div>
-</div>
-<div class=»p-4 bg-dark-cardflexjustify-betweenitems-centertext-xs text-gray-400»>
-<span>Тема: Гуманитарные науки</span>
-<spanclass=»text-whitefont-semibold»>200 ₽</span>
-</div>
-</div>
-
-<!—Mockup 2 
-<div class=»glass-card rounded-2xl overflow-hiddenborderborder-white/10 group»>
-<div class=»bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 p-6 h-52 flexflex-coljustify-betweenrelativeoverflow-hidden»>
-<div class=»absolute top-0 right-0 w-32 h-32 bg-accent-500/20 rounded-fullblur-xl»></div>
-<div class=»flexjustify-betweenitems-centertext-xs text-accent-400 font-mono»>
-<span>#БИОЛОГИЯ</span>
-<span>SLIDE 04</span>
-</div>
-<div>
-<h4 class=»text-xl font-boldtext-white mb-2»>Генетика и ДНК: Основы жизни</h4>
-<p class=»text-xs text-gray-400 line-clamp-2»>Презентация для студента колледжа. Наглядные схемы, графики и структура нуклеотидов.</p>
-</div>
-<div class=»flexitems-center gap-2 text-[10px] text-gray-300»>
-<spanclass=»bg-white/10 px-2 py-0.5 rounded»>15 слайдов</span>
-<spanclass=»bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded»>Защищено на «Отлично»</span>
-</div>
-</div>
-<div class=»p-4 bg-dark-cardflexjustify-betweenitems-centertext-xs text-gray-400»>
-<span>Тема: Естественные науки</span>
-<spanclass=»text-whitefont-semibold»>200 ₽</span>
-</div>
-</div>
-
-<!—Mockup 3 
-<div class=»glass-card rounded-2xl overflow-hiddenborderborder-white/10 group»>
-<div class=»bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 p-6 h-52 flexflex-coljustify-betweenrelativeoverflow-hidden»>
-<div class=»absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-fullblur-xl»></div>
-<div class=»flexjustify-betweenitems-centertext-xs text-purple-400 font-mono»>
-<span>#БИЗНЕС</span>
-<span>SLIDE 08</span>
-</div>
-<div>
-<h4 class=»text-xl font-boldtext-white mb-2»>Стратегия Маркетинга 2026</h4>
-<p class=»text-xs text-gray-400 line-clamp-2»>Бизнес-презентация с анализом рынка, SWOT-анализом и финансовой моделью.</p>
-</div>
-<div class=»flexitems-center gap-2 text-[10px] text-gray-300»>
-<spanclass=»bg-white/10 px-2 py-0.5 rounded»>18 слайдов</span>
-<spanclass=»bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded»>Бизнес стиль</span>
-</div>
-</div>
-<div class=»p-4 bg-dark-cardflexjustify-betweenitems-centertext-xs text-gray-400»>
-<span>Тема: Экономика / Маркетинг</span>
-<spanclass=»text-whitefont-semibold»>200 ₽</span>
-</div>
-</div>
-</div>
-</section>
-
-<!—ReviewsSection
-<sectionid=»reviews» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-autoborder-t border-white/5»>
-<div class=»text-center max-w-3xl mx-auto mb-16»>
-<spanclass=»px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>Отзывы заказчиков</span>
-<h2 class=»text-3xl sm:text-4xl font-extraboldtext-white mt-3 mb-4»>Что говорят клиенты</h2>
-<p class=»text-gray-400»>Реальные эмоции школьников и студентов после защиты работ.</p>
-</div>
-
-<div class=»grid grid-cols-1 md:grid-cols-3 gap-6»>
-<div class=»glass-card p-6 rounded-2xl flexflex-coljustify-between»>
-<div>
-<div class=»flex text-amber-400 gap-1 text-xs mb-4»>
-<i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i>
-</div>
-<p class=»text-gray-300 text-smleading-relaxed mb-6»>
-                            «Срочно нужна была презентация по истории на следующий день. Антон Владимирович сделал всё за 3 часа! Преподаватель поставил 5, дизайн отличный!»
-</p>
-</div>
-<div class=»flexitems-center gap-3 pt-4 border-t border-white/10»>
-<div class=»w-9 h-9 rounded-full bg-brand-500/20 text-brand-400 flexitems-centerjustify-centerfont-boldtext-xs»>
-                            МК
-</div>
-<div>
-<div class=»text-smfont-boldtext-white»>Максим К.</div>
-<div class=»text-xs text-gray-500»>Студент 2 курса</div>
-</div>
-</div>
-</div>
-
-<div class=»glass-card p-6 rounded-2xl flexflex-coljustify-between»>
-<div>
-<div class=»flex text-amber-400 gap-1 text-xs mb-4»>
-<i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i>
-</div>
-<p class=»text-gray-300 text-smleading-relaxed mb-6»>
-                            «Заказывала доклад и слайды по биологии. Очень удобно, что цена всего 200 рублей, а качество на высоте. Обязательно буду обращаться ещё!»
-</p>
-</div>
-<div class=»flexitems-center gap-3 pt-4 border-t border-white/10»>
-<div class=»w-9 h-9 rounded-full bg-accent-500/20 text-accent-400 flexitems-centerjustify-centerfont-boldtext-xs»>
-                            АЕ
-</div>
-<div>
-<div class=»text-smfont-boldtext-white»>Алена Е.</div>
-<div class=»text-xs text-gray-500»>Ученица 11 класса</div>
-</div>
-</div>
-</div>
-
-<div class=»glass-card p-6 rounded-2xl flexflex-coljustify-between»>
-<div>
-<div class=»flex text-amber-400 gap-1 text-xs mb-4»>
-<i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i><i class=»fa-solidfa-star»></i>
-</div>
-<p class=»text-gray-300 text-smleading-relaxed mb-6»>
-                            «Спасибо Антону за оперативность. Текст доклада был написан без лишней воды, слайды оформлены строго по теме. Лучшее соотношение цены и качества!»
-</p>
-</div>
-<div class=»flexitems-center gap-3 pt-4 border-t border-white/10»>
-<div class=»w-9 h-9 rounded-full bg-purple-500/20 text-purple-400 flexitems-centerjustify-centerfont-boldtext-xs»>
-                            ДН
-</div>
-<div>
-<div class=»text-smfont-boldtext-white»>Даниил Н.</div>
-<div class=»text-xs text-gray-500»>Студент ВУЗа</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!—ContactsSection
-<sectionid=»contacts» class=»py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-autoborder-t border-white/5»>
-<div class=»grid grid-cols-1 lg:grid-cols-12 gap-12 items-center»>
-
-<div class=»lg:col-span-6 space-y-6»>
-<spanclass=»px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-semiboldtext-xsuppercasetracking-wider»>Контакты для связи</span>
-<h2 class=»text-3xl sm:text-4xl font-extraboldtext-white»>
-                        Готовы заказать или задать вопрос?
-</h2>
-<p class=»text-gray-400 leading-relaxed»>
-                        Пишите в любое время! Я на связи в Telegram и отвечу на все интересующие вопросы, уточню детали и сразу приступлю к работе.
-</p>
-
-<!—ContactCards
-<div class=»space-y-4 pt-2»>
-<!—TelegramContactCard
-<a href=»https://t.me/shoch7» target=»_blank» class=»glass-card p-5 rounded-2xl flexitems-centerjustify-betweengroup»>
-<div class=»flexitems-center gap-4»>
-<div class=»w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flexitems-centerjustify-center text-2xl group-hover:scale-110 transition-transform»>
-<i class=»fa-brandsfa-telegram»></i>
-</div>
-<div>
-<div class=»text-xs text-gray-400»>Основной канал связи (Telegram)</div>
-<div class=»text-lgfont-boldtext-white group-hover:text-brand-400 transition-colors»>@shoch7</div>
-</div>
-</div>
-<i class=»fa-solidfa-chevron-right text-gray-500 group-hover:text-brand-400 group-hover:translate-x-1 transition-all»></i>
-</a>
-
-<!—EmailContactCard
-<div class=»glass-card p-5 rounded-2xl flexitems-centerjustify-between»>
-<div class=»flexitems-center gap-4»>
-<div class=»w-12 h-12 rounded-xl bg-accent-500/20 text-accent-400 flexitems-centerjustify-center text-2xl»>
-<i class=»fa-solidfa-envelope»></i>
-</div>
-<div>
-<div class=»text-xs text-gray-400»>Электронная почта</div>
-<div class=»text-smsm:text-basefont-boldtext-white»>gorbunovartemavich@gmail.com</div>
-</div>
-</div>
-<buttononclick=»copyToClipboard('gorbunovartemavich@gmail.com')» class=»p-2.5 rounded-lgbg-white/5 hover:bg-white/10 text-gray-300 hover:text-whitetransition-colors» title=»Скопировать почту»>
-<i class=»fa-regularfa-copy»></i>
-</button>
-</div>
-</div>
-</div>
-
-<!—CalloutBannerCard
-<div class=»lg:col-span-6»>
-<div class=»glass-panel p-8 sm:p-10 rounded-3xl border border-brand-500/30 text-centerrelativeoverflow-hidden»>
-<div class=»absolute -top-10 -right-10 w-48 h-48 bg-brand-500/20 rounded-full blur-3xl pointer-events-none»></div>
-
-<div class=»w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-500 flexitems-centerjustify-center text-3xl text-white mx-auto mb-6 shadow-xl shadow-brand-500/20»>
-<i class=»fa-solidfa-handshake»></i>
-</div>
-
-<h3 class=»text-2xl font-boldtext-white mb-3»>Закажите прямо сейчас</h3>
-<p class=»text-gray-300 text-sm mb-8 leading-relaxed»>
-                            Просто отправьте тему работы и ваши пожелания в Telegram. Оплата только <strong>200 ₽</strong> за полную готовность!
-</p>
-
-<a href=»https://t.me/shoch7» target=»_blank» class=»inline-flexitems-centerjustify-center gap-3 w-fullbg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-whitefont-boldtext-base py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-allhover:scale-[1.02]»>
-<i class=»fa-brands fa-telegram text-xl»></i>
-<span>Написать Антону Владимировичу</span>
-</a>
-</div>
-</div>
-
-</div>
-</section>
 </main>
 
-<!—Footer
-<footerclass=»glass-panelborder-t border-white/10 py-10 mt-12»>
-<div class=»max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flexflex-colmd:flex-rowitems-centerjustify-between gap-6 text-centermd:text-left»>
-<div class=»flex items-center gap-3»>
-<div class=»w-8 h-8 rounded-lg bg-brand-500 flexitems-centerjustify-centerfont-boldtext-whitetext-xs»>
-                    АВ
-</div>
-<div class=»text-sm font-semibold text-white»>
-                    Антон Владимирович — Презентации и доклады
-</div>
-</div>
-
-<div class=»text-xs text-gray-500»>
-                © 2026 Все права защищены. Стоимость услуги: 200 ₽.
-</div>
-
-<div class=»flexitems-center gap-4 text-sm text-gray-400»>
-<a href=»https://t.me/shoch7» target=»_blank» class=»hover:text-brand-400 transition-colors»>Telegram: @shoch7</a>
-</div>
-</div>
+<footer>
+<p>&copy; Антон Владимирович. Все права защищены.</p>
 </footer>
 
-<!—InteractiveScripts
-<script>
-        // MobileMenuToggle
-ConstmenuBtn = document.getElementById('mobile-menu-btn');
-ConstmobileMenu = document.getElementById('mobile-menu');
-ConstmobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-menuBtn.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
-        });
-
-mobileNavLinks.forEach(link => {
-link.addEventListener('click', () => {
-mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // SlidesRangeSliderUpdate
-Constslider = document.getElementById('slides-slider');
-ConstslidesVal = document.getElementById('slides-val');
-
-Slider.addEventListener('input', € => {
-Constval = e.target.value;
-slidesVal.textContent = `${val} слайдов / стр.`;
-        });
-
-        // Copytoclipboardfallbacklogic
-FunctioncopyToClipboard(text) {
-ConsttempInput = document.createElement('input');
-tempInput.value = text;
-document.body.appendChild(tempInput);
-tempInput.select();
-document.execCommand('copy');
-document.body.removeChild(tempInput);
-
-showToast('E-mail скопирован в буфер обмена!');
-        }
-
-        // ShowToastNotification
-FunctionshowToast(message) {
-Consttoast = document.getElementById('toast');
-ConsttoastMsg = document.getElementById('toast-message');
-toastMsg.textContent = message;
-toast.classList.add('show');
-setTimeout(() => {
-toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // SendOrderdetailstoTelegram
-FunctionsendToTelegram() {
-Consttopic = document.getElementById('calc-topic').value || 'Не указана';
-Consttype = document.getElementById('calc-type').value;
-Constslides = document.getElementById('slides-slider').value;
-Constdeadline = document.getElementById('calc-deadline').value;
-Constcomment = document.getElementById('calc-comment').value || 'Нет комментариев';
-
-Constmessage = `Здравствуйте, Антон Владимирович! Хочу заказать работу.%0A%0A` +
-                `📌 *Тип:* ${encodeURIComponent(type)}%0A` +
-                `📖 *Тема:* ${encodeURIComponent(topic)}%0A` +
-                `📊 *Объем:* ${slides} слайдов/стр.%0A` +
-                `⏰ *Срок:* ${encodeURIComponent(deadline)}%0A` +
-                `💬 *Комментарий:* ${encodeURIComponent(comment)}%0A` +
-                `💰 *Цена:* 200 ₽`;
-
-ConsttgUrl = `https://t.me/shoch7?text=${message}`;
-Window.open(tgUrl, '_blank');
-        }
-
-        // SendOrderviaEmail
-FunctionsendToEmail() {
-Consttopic = document.getElementById('calc-topic').value || 'Не указана';
-Consttype = document.getElementById('calc-type').value;
-Constslides = document.getElementById('slides-slider').value;
-Constdeadline = document.getElementById('calc-deadline').value;
-Constcomment = document.getElementById('calc-comment').value || 'Нет комментариев';
-
-Constsubject = encodeURIComponent(`Заказ: ${type} - ${topic}`);
-Constbody = encodeURIComponent(
-                `Здравствуйте, Антон Владимирович!\n\n` +
-                `Хочу сделать заказ:\n` +
-                `- Тип работы: ${type}\n` +
-                `- Тема: ${topic}\n` +
-                `- Объем: ${slides} слайдов/страниц\n` +
-                `- Срок: ${deadline}\n` +
-                `- Комментарий: ${comment}\n\n` +
-                `Стоимость: 200 ₽\n`
-            );
-
-Window.location.href = `mailto:gorbunovartemavich@gmail.com?subject=${subject}&body=${body}`;
-        }
-</script>
 </body>
 </html>
-```
-
