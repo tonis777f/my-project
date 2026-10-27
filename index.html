@@ -1,670 +1,670 @@
 ```html
 <!DOCTYPE html>
-<htmllang="ru" class="scroll-smooth">
+<html lang="ru" class="scroll-smooth">
 <head>
-<metacharset="UTF-8">
-<metaname="viewport" content="width=device-width, initial-scale=1.0">
-<title>Адвокат Осипова Ксения | Профессиональная юридическая помощь</title>
-<!-- Tailwind CSS -->
-<scriptsrc="https://cdn.tailwindcss.com"></script>
-<!-- FontAwesomeIcons -->
-<linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- GoogleFonts -->
-<linkrel="preconnect" href="https://fonts.googleapis.com">
-<linkrel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат Осипова Ксения | Профессиональная юридическая помощь</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-navy: {
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
                             800: '#0f172a',
                             900: '#0b1329',
                             950: '#060a17',
                         },
-gold: {
+                        gold: {
                             400: '#facc15',
                             500: '#eab308',
                             600: '#ca8a04',
                             700: '#a16207',
                         }
                     },
-fontFamily: {
-serif: ['CormorantGaramond', 'serif'],
-sans: ['Inter', 'sans-serif'],
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
-</script>
-<style>
+    </script>
+    <style>
         .gold-gradient-text {
-background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+            background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-border-gradient {
-border-image: linear-gradient(toright, #ca8a04, #fef08a, #ca8a04) 1;
+            border-image: linear-gradient(to right, #ca8a04, #fef08a, #ca8a04) 1;
         }
         .bg-glass {
-background: rgba(15, 23, 42, 0.75);
-backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
         }
-</style>
+    </style>
 </head>
-<bodyclass="bg-navy-950 text-slate-100 font-sansantialiased selection:bg-gold-500 selection:text-navy-950">
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-navy-950">
 
-<!-- Header / Navigation -->
-<headerclass="fixed top-0 left-0 right-0 z-50 bg-glassborder-b border-slate-800 transition-all duration-300">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flexitems-centerjustify-between h-20">
-<!-- Logo -->
-<a href="#" class="flexitems-center gap-3 group">
-<div class="w-10 h-10 rounded-fullborder border-gold-500/50 flexitems-centerjustify-center bg-navy-900 group-hover:border-gold-400 transition-colors">
-<i class="fa-solidfa-scale-balanced text-gold-400 text-lg"></i>
-</div>
-<div>
-<spanclass="blocktext-xl font-seriffont-boldtracking-widetext-white group-hover:text-gold-400 transition-colors">ОСИПОВА КСЕНИЯ</span>
-<spanclass="blocktext-xs text-gold-500/80 tracking-widestuppercase">Адвокат</span>
-</div>
-</a>
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-navy-900 group-hover:border-gold-400 transition-colors">
+                        <i class="fa-solid fa-scale-balanced text-gold-400 text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-serif font-bold tracking-wide text-white group-hover:text-gold-400 transition-colors">ОСИПОВА КСЕНИЯ</span>
+                        <span class="block text-xs text-gold-500/80 tracking-widest uppercase">Адвокат</span>
+                    </div>
+                </a>
 
-<!-- DesktopNavigation -->
-<navclass="hiddenmd:flexitems-center gap-8">
-<a href="#about" class="text-smfont-medium text-slate-300 hover:text-gold-400 transition-colors">Обо мне</a>
-<a href="#services" class="text-smfont-medium text-slate-300 hover:text-gold-400 transition-colors">Услуги</a>
-<a href="#practice" class="text-smfont-medium text-slate-300 hover:text-gold-400 transition-colors">Практика</a>
-<a href="#activity" class="text-smfont-medium text-slate-300 hover:text-gold-400 transition-colors">Деятельность</a>
-<a href="#contacts" class="text-smfont-medium text-slate-300 hover:text-gold-400 transition-colors">Контакты</a>
-</nav>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Обо мне</a>
+                    <a href="#services" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Услуги</a>
+                    <a href="#practice" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Практика</a>
+                    <a href="#activity" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Деятельность</a>
+                    <a href="#contacts" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Контакты</a>
+                </nav>
 
-<!-- Phone CTA Button -->
-<div class="hiddensm:flexitems-center gap-4">
-<a href="tel:+79243796984" class="flexitems-center gap-2 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-semibold px-5 py-2.5 rounded-lgshadow-lg shadow-gold-600/20 transition-all duration-300 hover:scale-105">
-<i class="fa-solidfa-phone"></i>
-<span>+7 924 379-69-84</span>
-</a>
-</div>
+                <!-- Phone CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="tel:+79243796984" class="flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-semibold px-5 py-2.5 rounded-lg shadow-lg shadow-gold-600/20 transition-all duration-300 hover:scale-105">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+7 924 379-69-84</span>
+                    </a>
+                </div>
 
-<!-- MobileMenuButton -->
-<buttonid="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
-<i class="fa-solidfa-bars text-2xl"></i>
-</button>
-</div>
-</div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
 
-<!-- Mobiledropdownmenu -->
-<div id="mobile-menu" class="hiddenmd:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-<a href="#about" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Обо мне</a>
-<a href="#services" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Услуги</a>
-<a href="#practice" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Практика</a>
-<a href="#activity" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Деятельность</a>
-<a href="#contacts" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Контакты</a>
-<a href="tel:+79243796984" class="inline-flexitems-center gap-2 w-fulljustify-center bg-gold-500 text-navy-950 font-semibold py-3 rounded-lg mt-2">
-<i class="fa-solidfa-phone"></i>
-<span>+7 924 379-69-84</span>
-</a>
-</div>
-</header>
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Обо мне</a>
+            <a href="#services" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Услуги</a>
+            <a href="#practice" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Практика</a>
+            <a href="#activity" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Деятельность</a>
+            <a href="#contacts" class="block py-2 text-slate-300 hover:text-gold-400 transition-colors">Контакты</a>
+            <a href="tel:+79243796984" class="inline-flex items-center gap-2 w-full justify-center bg-gold-500 text-navy-950 font-semibold py-3 rounded-lg mt-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>+7 924 379-69-84</span>
+            </a>
+        </div>
+    </header>
 
-<!-- HeroSection -->
-<sectionclass="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hiddenbg-gradient-to-b from-navy-900 via-navy-950 to-navy-950">
-<!-- Backgroundsubtledecor -->
-<div class="absolute inset-0 opacity-10 pointer-events-none">
-<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold-500/20 rounded-fullblur-[120px]"></div>
-</div>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950">
+        <!-- Background subtle decor -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold-500/20 rounded-full blur-[120px]"></div>
+        </div>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-<!-- HeroTextBlock -->
-<div class="lg:col-span-7 space-y-6 text-centerlg:text-left">
-<div class="inline-flexitems-center gap-2 px-3.5 py-1.5 rounded-fullborder border-gold-500/30 bg-gold-500/10 text-gold-400 text-xssm:text-smfont-mediumtracking-wide">
-<i class="fa-solidfa-shield-halved"></i>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+               
+                <!-- Hero Text Block -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-medium tracking-wide">
+                        <i class="fa-solid fa-shield-halved"></i>
                         Надежная правовая защита и гарантия конфиденциальности
-</div>
+                    </div>
 
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-seriffont-boldtext-whiteleading-tight">
-                        Адвокат <brclass="hiddensm:block"/>
-<spanclass="gold-gradient-text">Осипова Ксения</span>
-</h1>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
+                        Адвокат <br class="hidden sm:block"/>
+                        <span class="gold-gradient-text">Осипова Ксения</span>
+                    </h1>
 
-<p class="text-lgsm:text-xl text-slate-300 max-w-2xl font-lightleading-relaxed">
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
                         Профессиональная защита ваших прав и законных интересов. Многолетний опыт работы в правоохранительной и юридической сфере, бескомпромиссная стойкость и индивидуальный подход к каждому делу.
-</p>
+                    </p>
 
-<div class="pt-4 flexflex-colsm:flex-row gap-4 justify-centerlg:justify-start">
-<buttononclick="openModal()" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-boldrounded-lgshadow-xl shadow-gold-500/20 transformhover:-translate-y-0.5 transition-alltext-center">
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="openModal()" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-bold rounded-lg shadow-xl shadow-gold-500/20 transform hover:-translate-y-0.5 transition-all text-center">
                             Записаться на консультацию
-</button>
-<a href="tel:+79243796984" class="px-8 py-4 border border-slate-700 hover:border-gold-500/50 bg-navy-900/60 text-whitefont-mediumrounded-lgtransition-allflexitems-centerjustify-center gap-2 hover:bg-navy-900">
-<i class="fa-solidfa-phone text-gold-400"></i>
-<span>Позвонить прямо сейчас</span>
-</a>
-</div>
+                        </button>
+                        <a href="tel:+79243796984" class="px-8 py-4 border border-slate-700 hover:border-gold-500/50 bg-navy-900/60 text-white font-medium rounded-lg transition-all flex items-center justify-center gap-2 hover:bg-navy-900">
+                            <i class="fa-solid fa-phone text-gold-400"></i>
+                            <span>Позвонить прямо сейчас</span>
+                        </a>
+                    </div>
 
-<!-- Keyachievements/pills -->
-<div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0">
-<div>
-<div class="text-2xl sm:text-3xl font-seriffont-boldtext-white">100%</div>
-<div class="text-xs text-slate-400 mt-1">Конфиденциальность</div>
-</div>
-<div>
-<div class="text-2xl sm:text-3xl font-seriffont-bold text-gold-400">24/7</div>
-<div class="text-xs text-slate-400 mt-1">Экстренный выезд</div>
-</div>
-<div>
-<div class="text-2xl sm:text-3xl font-seriffont-boldtext-white">Индивидуальный</div>
-<div class="text-xs text-slate-400 mt-1">Подход к делу</div>
-</div>
-</div>
-</div>
+                    <!-- Key achievements/pills -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-white">100%</div>
+                            <div class="text-xs text-slate-400 mt-1">Конфиденциальность</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-gold-400">24/7</div>
+                            <div class="text-xs text-slate-400 mt-1">Экстренный выезд</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-white">Индивидуальный</div>
+                            <div class="text-xs text-slate-400 mt-1">Подход к делу</div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- HeroPhotoCard -->
-<div class="lg:col-span-5 flexjustify-center">
-<div class="relative w-fullmax-w-md">
-<!-- DecorativeFrame -->
-<div class="absolute -inset-2 bg-gradient-to-r from-gold-500 to-gold-700 rounded-2xl opacity-30 blur-lg"></div>
+                <!-- Hero Photo Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-gold-500 to-gold-700 rounded-2xl opacity-30 blur-lg"></div>
+                       
+                        <div class="relative bg-navy-900 rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl">
+                            <!-- Main Advocate Photo provided by user -->
+                            <img src="1000017609.jpg"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x700/0f172a/eab308?text=%D0%9E%D1%81%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0+%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F';"
+                                 alt="Адвокат Осипова Ксения"
+                                 class="w-full h-auto object-cover aspect-[4/5] object-center">
+                           
+                            <div class="p-5 bg-gradient-to-t from-navy-950 via-navy-900 to-transparent text-center">
+                                <h3 class="font-serif text-2xl font-bold text-white">Осипова Ксения</h3>
+                                <p class="text-gold-400 text-sm font-medium mt-1">Адвокат по уголовным и гражданским делам</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="relative bg-navy-900 rounded-2xl overflow-hiddenborder border-gold-500/30 shadow-2xl">
-<!-- MainAdvocatePhotoprovidedbyuser -->
-<imgsrc="1000017609.jpg" 
-onerror="this.onerror=null; this.src='https://placehold.co/600x700/0f172a/eab308?text=%D0%9E%D1%81%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0+%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F';" 
-alt="Адвокат Осипова Ксения" 
-class="w-full h-autoobject-coveraspect-[4/5] object-center">
+            </div>
+        </div>
+    </section>
 
-<div class="p-5 bg-gradient-to-t from-navy-950 via-navy-900 to-transparenttext-center">
-<h3 class="font-serif text-2xl font-boldtext-white">Осипова Ксения</h3>
-<p class="text-gold-400 text-smfont-medium mt-1">Адвокат по уголовным и гражданским делам</p>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- AboutSection -->
-<sectionid="about" class="py-20 bg-navy-900 relative">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-<div class="lg:col-span-5">
-<div class="relative rounded-2xl overflow-hiddenborder border-slate-800 shadow-xl">
-<img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" alt="Юридическая практика" class="w-full h-96 object-cover">
-<div class="absolute inset-0 bg-navy-950/40"></div>
-<div class="absolute bottom-6 left-6 right-6 p-4 bg-navy-900/90 backdrop-blurrounded-xl border border-gold-500/30">
-<p class="text-smitalic text-slate-300">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+               
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" alt="Юридическая практика" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-navy-950/40"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-navy-900/90 backdrop-blur rounded-xl border border-gold-500/30">
+                            <p class="text-sm italic text-slate-300">
                                 «Закон и справедливость — главные ориентиры моей профессиональной деятельности. Моя цель — надежно защитить клиента в любой правовой ситуации.»
-</p>
-</div>
-</div>
-</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-<div class="lg:col-span-7 space-y-6">
-<div class="inline-block text-gold-400 font-semiboldtext-smtracking-wideruppercase">О себе</div>
-<h2 class="text-3xl sm:text-4xl font-seriffont-boldtext-white">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block text-gold-400 font-semibold text-sm tracking-wider uppercase">О себе</div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
                         Опыт, глубокие знания закона и бескомпромиссная защита
-</h2>
-<p class="text-slate-300 leading-relaxed">
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
                         Приветствую вас! Я — адвокат Осипова Ксения. Имею профильный опыт службы в правоохранительных органах и систему фундаментальных юридических знаний, что позволяет мне видеть любое дело изнутри, предвидеть шаги оппонентов и следствия.
-</p>
-<p class="text-slate-300 leading-relaxed">
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
                         Моя практика охватывает сложнейшие уголовные дела, защиту гражданских прав, семейные споры, а также специализированную юридическую помощь военнослужащим и их семьям. Я гарантирую каждому доверителю высокую квалификацию, абсолютную адвокатскую тайну и честный подход.
-</p>
+                    </p>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-<div class="p-4 rounded-xl bg-navy-950 border border-slate-800 flexitems-start gap-3">
-<i class="fa-solidfa-gavel text-gold-400 text-xl mt-1"></i>
-<div>
-<h4 class="font-boldtext-whitetext-base">Глубокий анализ</h4>
-<p class="text-xs text-slate-400 mt-1">Тщательное изучение деталей и построение линии защиты.</p>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-navy-950 border border-slate-800 flexitems-start gap-3">
-<i class="fa-solidfa-lock text-gold-400 text-xl mt-1"></i>
-<div>
-<h4 class="font-boldtext-whitetext-base">Адвокатская тайна</h4>
-<p class="text-xs text-slate-400 mt-1">Полная конфиденциальность вашей информации.</p>
-</div>
-</div>
-</div>
-</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-navy-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-gavel text-gold-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Глубокий анализ</h4>
+                                <p class="text-xs text-slate-400 mt-1">Тщательное изучение деталей и построение линии защиты.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-navy-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-lock text-gold-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Адвокатская тайна</h4>
+                                <p class="text-xs text-slate-400 mt-1">Полная конфиденциальность вашей информации.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- ServicesSection -->
-<sectionid="services" class="py-20 bg-navy-950">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-navy-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold text-sm tracking-wider uppercase">Направления практики</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Основные виды юридической помощи</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
 
-<div class="text-center max-w-3xl mx-auto mb-16">
-<spanclass="text-gold-400 font-semiboldtext-smtracking-wideruppercase">Направления практики</span>
-<h2 class="text-3xl sm:text-4xl font-seriffont-boldtext-white mt-2">Основные виды юридической помощи</h2>
-<div class="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-<!-- ServiceCard 1 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-solidfa-handcuffs"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Уголовные дела</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               
+                <!-- Service Card 1 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-handcuffs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Уголовные дела</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Защита прав подозреваемых, обвиняемых и потерпевших на всех стадиях предварительного следствия и в суде. Участие в допросах, обысках, срочный выезд.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Экономические преступления</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Должностные и квалифицированные статьи</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Обжалование меры пресечения</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Экономические преступления</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Должностные и квалифицированные статьи</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Обжалование меры пресечения</li>
+                    </ul>
+                </div>
 
-<!-- ServiceCard 2 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-solidfa-scale-balanced"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Гражданские споры</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+                <!-- Service Card 2 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Гражданские споры</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Представительство интересов в судах общей юрисдикции. Взыскание долгов, имущественные споры, защита прав собственности и возмещение ущерба.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Споры по недвижимости и договорам</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Споры с финансовыми организациями</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Исполнительное производство</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Споры по недвижимости и договорам</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Споры с финансовыми организациями</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Исполнительное производство</li>
+                    </ul>
+                </div>
 
-<!-- ServiceCard 3 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-solidfa-people-roof"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Семейное право</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+                <!-- Service Card 3 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Семейное право</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Деликатное решение семейных конфликтов: расторжение брака, раздел совместно нажитого имущества, определение места жительства детей и алименты.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Раздел имущества через суд/соглашение</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Споры о детях и алиментах</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Составление брачных договоров</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Раздел имущества через суд/соглашение</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Споры о детях и алиментах</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Составление брачных договоров</li>
+                    </ul>
+                </div>
 
-<!-- ServiceCard 4 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-solidfa-person-military-rifle"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Права военнослужащих</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+                <!-- Service Card 4 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-person-military-rifle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Права военнослужащих</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Защита прав военнослужащих и участников СВО, получение выплат, статус ветерана, обжалование решений ВВК, помощь родственникам.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Сопровождение выплат и льгот</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Обжалование отказов и решений органов</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Консультации семей военнослужащих</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Сопровождение выплат и льгот</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Обжалование отказов и решений органов</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Консультации семей военнослужащих</li>
+                    </ul>
+                </div>
 
-<!-- ServiceCard 5 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-solidfa-briefcase"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Защита бизнеса и арбитраж</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+                <!-- Service Card 5 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Защита бизнеса и арбитраж</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Юридическое сопровождение предпринимателей и юридических лиц. Арбитражные споры, защита при проверках госорганов, досудебное урегулирование.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Договорная работа и аудит</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Арбитражные суды всех инстанций</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Налоговые и административные споры</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Договорная работа и аудит</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Арбитражные суды всех инстанций</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Налоговые и административные споры</li>
+                    </ul>
+                </div>
 
-<!-- ServiceCard 6 -->
-<div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
-<div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
-<i class="fa-regularfa-file-lines"></i>
-</div>
-<h3 class="text-xl font-boldtext-white mb-3">Составление документов</h3>
-<p class="text-slate-400 text-smleading-relaxed mb-4">
+                <!-- Service Card 6 -->
+                <div class="bg-navy-900 rounded-2xl p-8 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Составление документов</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Квалифицированная подготовка исков, жалоб, претензий, ходатайств, договоров и апелляций в любые государственные и судебные инстанции.
-</p>
-<ulclass="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Исковые заявления любой сложности</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Апелляционные и кассационные жалобы</li>
-<li class="flexitems-center gap-2"><i class="fa-solidfa-check text-gold-400"></i> Правовой анализ готовых документов</li>
-</ul>
-</div>
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Исковые заявления любой сложности</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Апелляционные и кассационные жалобы</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Правовой анализ готовых документов</li>
+                    </ul>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- Activity / PracticePhotosGallery -->
-<sectionid="activity" class="py-20 bg-navy-900 border-t border-b border-slate-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<spanclass="text-gold-400 font-semiboldtext-smtracking-wideruppercase">Деятельность и практика</span>
-<h2 class="text-3xl sm:text-4xl font-seriffont-boldtext-white mt-2">Профессиональная жизнь в деталях</h2>
-<p class="text-slate-400 mt-2 text-sm">Судебные заседания, работа с документами, выезды и консультации доверителей.</p>
-</div>
+    <!-- Activity / Practice Photos Gallery -->
+    <section id="activity" class="py-20 bg-navy-900 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold text-sm tracking-wider uppercase">Деятельность и практика</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Профессиональная жизнь в деталях</h2>
+                <p class="text-slate-400 mt-2 text-sm">Судебные заседания, работа с документами, выезды и консультации доверителей.</p>
+            </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- GalleryItem 1 -->
-<div class="grouprelativerounded-xl overflow-hiddenshadow-lgaspect-squareborder border-slate-800">
-<img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=600" alt="Судебный процесс" class="w-full h-fullobject-cover group-hover:scale-110 transition-transform duration-500">
-<div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparentto-transparent opacity-80"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<spanclass="text-xsfont-semibold text-gold-400 uppercasetracking-wider">Судебный процесс</span>
-<h4 class="text-smfont-boldtext-white mt-0.5">Защита интересов в суде</h4>
-</div>
-</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-square border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=600" alt="Судебный процесс" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider">Судебный процесс</span>
+                        <h4 class="text-sm font-bold text-white mt-0.5">Защита интересов в суде</h4>
+                    </div>
+                </div>
 
-<!-- GalleryItem 2 -->
-<div class="grouprelativerounded-xl overflow-hiddenshadow-lgaspect-squareborder border-slate-800">
-<img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600" alt="Работа с документацией" class="w-full h-fullobject-cover group-hover:scale-110 transition-transform duration-500">
-<div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparentto-transparent opacity-80"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<spanclass="text-xsfont-semibold text-gold-400 uppercasetracking-wider">Анализ</span>
-<h4 class="text-smfont-boldtext-white mt-0.5">Подготовка процессуальных бумаг</h4>
-</div>
-</div>
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-square border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600" alt="Работа с документацией" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider">Анализ</span>
+                        <h4 class="text-sm font-bold text-white mt-0.5">Подготовка процессуальных бумаг</h4>
+                    </div>
+                </div>
 
-<!-- GalleryItem 3 -->
-<div class="grouprelativerounded-xl overflow-hiddenshadow-lgaspect-squareborder border-slate-800">
-<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600" alt="Консультация клиента" class="w-full h-fullobject-cover group-hover:scale-110 transition-transform duration-500">
-<div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparentto-transparent opacity-80"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<spanclass="text-xsfont-semibold text-gold-400 uppercasetracking-wider">Доверие</span>
-<h4 class="text-smfont-boldtext-white mt-0.5">Личные консультации</h4>
-</div>
-</div>
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-square border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600" alt="Консультация клиента" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider">Доверие</span>
+                        <h4 class="text-sm font-bold text-white mt-0.5">Личные консультации</h4>
+                    </div>
+                </div>
 
-<!-- GalleryItem 4 -->
-<div class="grouprelativerounded-xl overflow-hiddenshadow-lgaspect-squareborder border-slate-800">
-<img src="https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&q=80&w=600" alt="Правовой аудит" class="w-full h-fullobject-cover group-hover:scale-110 transition-transform duration-500">
-<div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparentto-transparent opacity-80"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<spanclass="text-xsfont-semibold text-gold-400 uppercasetracking-wider">Экспертиза</span>
-<h4 class="text-smfont-boldtext-white mt-0.5">Правовая экспертиза ситуаций</h4>
-</div>
-</div>
-</div>
-</div>
-</section>
+                <!-- Gallery Item 4 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-square border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&q=80&w=600" alt="Правовой аудит" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider">Экспертиза</span>
+                        <h4 class="text-sm font-bold text-white mt-0.5">Правовая экспертиза ситуаций</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- WhyChooseSection -->
-<sectionclass="py-20 bg-navy-950">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div>
-<spanclass="text-gold-400 font-semiboldtext-smtracking-wideruppercase">Принципы работы</span>
-<h2 class="text-3xl sm:text-4xl font-seriffont-boldtext-white mt-2 mb-6">Почему клиенты выбирают адвоката Осипову Ксению</h2>
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-navy-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold-400 font-semibold text-sm tracking-wider uppercase">Принципы работы</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-6">Почему клиенты выбирают адвоката Осипову Ксению</h2>
+                   
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-1">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Честная оценка перспектив дела</h3>
+                                <p class="text-slate-400 text-sm mt-1">Я никогда не даю ложных обещаний. Вы узнаете реальные риски и шансы на успеха до заключения соглашения.</p>
+                            </div>
+                        </div>
 
-<div class="space-y-6">
-<div class="flexitems-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 shrink-0 mt-1">
-<i class="fa-solidfa-scale-balanced"></i>
-</div>
-<div>
-<h3 class="text-lgfont-boldtext-white">Честная оценка перспектив дела</h3>
-<p class="text-slate-400 text-sm mt-1">Я никогда не даю ложных обещаний. Вы узнаете реальные риски и шансы на успеха до заключения соглашения.</p>
-</div>
-</div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Оперативность и доступность</h3>
+                                <p class="text-slate-400 text-sm mt-1">Всегда на связи при возникновении неотложных ситуаций (задержание, обыск, экстренные следственные действия).</p>
+                            </div>
+                        </div>
 
-<div class="flexitems-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 shrink-0 mt-1">
-<i class="fa-solidfa-clock"></i>
-</div>
-<div>
-<h3 class="text-lgfont-boldtext-white">Оперативность и доступность</h3>
-<p class="text-slate-400 text-sm mt-1">Всегда на связи при возникновении неотложных ситуаций (задержание, обыск, экстренные следственные действия).</p>
-</div>
-</div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-1">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Адвокатская неприкосновенность и тайна</h3>
+                                <p class="text-slate-400 text-sm mt-1">Любая передаваемая вами информация защищена законом об адвокатской деятельности.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="flexitems-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 shrink-0 mt-1">
-<i class="fa-solidfa-user-shield"></i>
-</div>
-<div>
-<h3 class="text-lgfont-boldtext-white">Адвокатская неприкосновенность и тайна</h3>
-<p class="text-slate-400 text-sm mt-1">Любая передаваемая вами информация защищена законом об адвокатской деятельности.</p>
-</div>
-</div>
-</div>
-</div>
-
-<!-- CalloutBox -->
-<div class="bg-gradient-to-br from-navy-900 to-navy-800 p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl relative">
-<i class="fa-solidfa-quote-rightabsolute top-6 right-6 text-6xl text-gold-500/10"></i>
-<h3 class="text-2xl font-seriffont-boldtext-white mb-4">Нужна срочная консультация или защита?</h3>
-<p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                <!-- Callout Box -->
+                <div class="bg-gradient-to-br from-navy-900 to-navy-800 p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-6xl text-gold-500/10"></i>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-4">Нужна срочная консультация или защита?</h3>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
                         Не откладывайте решение юридических проблем. Чем раньше адвокат вступит в дело, тем выше вероятность благоприятного исхода.
-</p>
+                    </p>
 
-<div class="space-y-4">
-<a href="tel:+79243796984" class="block w-full py-3.5 text-center bg-gold-500 hover:bg-gold-400 text-navy-950 font-boldrounded-xl shadow-lgtransition-colors">
-<i class="fa-solidfa-phone mr-2"></i> Позвонить: +7 924 379-69-84
-</a>
-<buttononclick="openModal()" class="block w-full py-3.5 text-centerborder border-slate-700 hover:border-gold-500 text-whitefont-semiboldrounded-xl transition-colors bg-navy-950/50">
+                    <div class="space-y-4">
+                        <a href="tel:+79243796984" class="block w-full py-3.5 text-center bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold rounded-xl shadow-lg transition-colors">
+                            <i class="fa-solid fa-phone mr-2"></i> Позвонить: +7 924 379-69-84
+                        </a>
+                        <button onclick="openModal()" class="block w-full py-3.5 text-center border border-slate-700 hover:border-gold-500 text-white font-semibold rounded-xl transition-colors bg-navy-950/50">
                             Оставить заявку на обратный звонок
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ContactSection -->
-<sectionid="contacts" class="py-20 bg-navy-900">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<spanclass="text-gold-400 font-semiboldtext-smtracking-wideruppercase">Контакты</span>
-<h2 class="text-3xl sm:text-4xl font-seriffont-boldtext-white mt-2">Свяжитесь со мной</h2>
-<p class="text-slate-400 mt-2 text-sm">Запись на прием осуществляется предварительно по телефону</p>
-</div>
+    <!-- Contact Section -->
+    <section id="contacts" class="py-20 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold text-sm tracking-wider uppercase">Контакты</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Свяжитесь со мной</h2>
+                <p class="text-slate-400 mt-2 text-sm">Запись на прием осуществляется предварительно по телефону</p>
+            </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+               
+                <!-- Contact info cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Телефон / WhatsApp / Telegram</span>
+                            <a href="tel:+79243796984" class="block text-xl font-bold text-white hover:text-gold-400 transition-colors mt-0.5">+7 924 379-69-84</a>
+                        </div>
+                    </div>
 
-<!-- Contactinfocards -->
-<div class="lg:col-span-5 space-y-4">
-<div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flexitems-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-xl shrink-0">
-<i class="fa-solidfa-phone"></i>
-</div>
-<div>
-<spanclass="text-xs text-slate-400 uppercasetracking-wider">Телефон / WhatsApp / Telegram</span>
-<a href="tel:+79243796984" class="blocktext-xl font-boldtext-white hover:text-gold-400 transition-colors mt-0.5">+7 924 379-69-84</a>
-</div>
-</div>
+                    <div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Режим работы</span>
+                            <p class="text-base font-semibold text-white mt-0.5">Пн - Пт: 09:00 - 19:00</p>
+                            <p class="text-xs text-gold-400">Экстренная выездная помощь 24/7</p>
+                        </div>
+                    </div>
 
-<div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flexitems-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-xl shrink-0">
-<i class="fa-solidfa-clock"></i>
-</div>
-<div>
-<spanclass="text-xs text-slate-400 uppercasetracking-wider">Режим работы</span>
-<p class="text-basefont-semiboldtext-white mt-0.5">Пн - Пт: 09:00 - 19:00</p>
-<p class="text-xs text-gold-400">Экстренная выездная помощь 24/7</p>
-</div>
-</div>
+                    <div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Статус</span>
+                            <p class="text-base font-semibold text-white mt-0.5">Адвокат Осипова Ксения</p>
+                            <p class="text-xs text-slate-400">Официальная юридическая защита</p>
+                        </div>
+                    </div>
+                </div>
 
-<div class="bg-navy-950 p-6 rounded-2xl border border-slate-800 flexitems-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flexitems-centerjustify-center text-gold-400 text-xl shrink-0">
-<i class="fa-solidfa-user-shield"></i>
-</div>
-<div>
-<spanclass="text-xs text-slate-400 uppercasetracking-wider">Статус</span>
-<p class="text-basefont-semiboldtext-white mt-0.5">Адвокат Осипова Ксения</p>
-<p class="text-xs text-slate-400">Официальная юридическая защита</p>
-</div>
-</div>
-</div>
+                <!-- Fast Contact Form -->
+                <div class="lg:col-span-7 bg-navy-950 p-8 rounded-2xl border border-slate-800">
+                    <h3 class="text-xl font-bold text-white mb-6">Отправить обращение</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Ваше имя</label>
+                                <input type="text" required placeholder="Иван Иванов" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Номер телефона</label>
+                                <input type="tel" required placeholder="+7 (___) ___-__-__" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors text-sm">
+                            </div>
+                        </div>
 
-<!-- FastContactForm -->
-<div class="lg:col-span-7 bg-navy-950 p-8 rounded-2xl border border-slate-800">
-<h3 class="text-xl font-boldtext-white mb-6">Отправить обращение</h3>
-<formid="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<labelclass="blocktext-xsfont-medium text-slate-300 mb-1">Ваше имя</label>
-<inputtype="text" requiredplaceholder="Иван Иванов" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-whitefocus:outline-none focus:border-gold-500 transition-colorstext-sm">
-</div>
-<div>
-<labelclass="blocktext-xsfont-medium text-slate-300 mb-1">Номер телефона</label>
-<inputtype="tel" requiredplaceholder="+7 (___) ___-__-__" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-whitefocus:outline-none focus:border-gold-500 transition-colorstext-sm">
-</div>
-</div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Тема обращения</label>
+                            <select class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors text-sm">
+                                <option>Уголовное право</option>
+                                <option>Гражданский спор</option>
+                                <option>Семейное право</option>
+                                <option>Права военнослужащих</option>
+                                <option>Арбитраж / Бизнес</option>
+                                <option>Другой вопрос</option>
+                            </select>
+                        </div>
 
-<div>
-<labelclass="blocktext-xsfont-medium text-slate-300 mb-1">Тема обращения</label>
-<selectclass="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-whitefocus:outline-none focus:border-gold-500 transition-colorstext-sm">
-<option>Уголовное право</option>
-<option>Гражданский спор</option>
-<option>Семейное право</option>
-<option>Права военнослужащих</option>
-<option>Арбитраж / Бизнес</option>
-<option>Другой вопрос</option>
-</select>
-</div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Описание ситуации</label>
+                            <textarea rows="4" required placeholder="Кратко опишите вашу проблему..." class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors text-sm"></textarea>
+                        </div>
 
-<div>
-<labelclass="blocktext-xsfont-medium text-slate-300 mb-1">Описание ситуации</label>
-<textarearows="4" requiredplaceholder="Кратко опишите вашу проблему..." class="w-full bg-navy-900 border border-slate-700 rounded-lg px-4 py-3 text-whitefocus:outline-none focus:border-gold-500 transition-colorstext-sm"></textarea>
-</div>
-
-<buttontype="submit" class="w-full py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-boldrounded-lgshadow-lgtransition-all">
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-bold rounded-lg shadow-lg transition-all">
                             Записаться на консультацию
-</button>
-<p class="text-xs text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и гарантию конфиденциальности.</p>
-</form>
-</div>
+                        </button>
+                        <p class="text-xs text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и гарантию конфиденциальности.</p>
+                    </form>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footerclass="bg-navy-950 border-t border-slate-800/80 py-10 text-slate-400 text-sm">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flexflex-colmd:flex-rowitems-centerjustify-between gap-4">
-<div class="flexitems-center gap-3">
-<div class="w-8 h-8 rounded-fullborder border-gold-500/50 flexitems-centerjustify-center bg-navy-900">
-<i class="fa-solidfa-scale-balanced text-gold-400 text-xs"></i>
-</div>
-<div>
-<spanclass="font-seriffont-boldtext-white">Адвокат Осипова Ксения</span>
-</div>
-</div>
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800/80 py-10 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border border-gold-500/50 flex items-center justify-center bg-navy-900">
+                        <i class="fa-solid fa-scale-balanced text-gold-400 text-xs"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-white">Адвокат Осипова Ксения</span>
+                    </div>
+                </div>
 
-<div class="text-centertext-xs text-slate-500">
-&copy; <spanid="year"></span> Все права защищены. Адвокатская деятельность в соответствии с ФЗ № 63-ФЗ.
-</div>
+                <div class="text-center text-xs text-slate-500">
+                    &copy; <span id="year"></span> Все права защищены. Адвокатская деятельность в соответствии с ФЗ № 63-ФЗ.
+                </div>
 
-<div>
-<a href="tel:+79243796984" class="text-gold-400 font-semiboldhover:underline">+7 924 379-69-84</a>
-</div>
-</div>
-</div>
-</footer>
+                <div>
+                    <a href="tel:+79243796984" class="text-gold-400 font-semibold hover:underline">+7 924 379-69-84</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- ConsultationModal -->
-<div id="modal" class="fixed inset-0 z-50 hiddenflexitems-centerjustify-center bg-navy-950/80 backdrop-blur-sm p-4">
-<div class="bg-navy-900 border border-gold-500/40 rounded-2xl p-6 sm:p-8 max-w-md w-fullrelative shadow-2xl">
-<buttononclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-whitetext-xl">
-<i class="fa-solidfa-xmark"></i>
-</button>
-<h3 class="text-2xl font-seriffont-boldtext-white mb-2">Связь с адвокатом</h3>
-<p class="text-xs text-slate-400 mb-6">Оставьте контакты, и Осипова Ксения свяжется с вами в ближайшее время.</p>
-
-<formonsubmit="handleModalSubmit(event)" class="space-y-4">
-<div>
-<labelclass="blocktext-xs text-slate-300 mb-1">Ваше имя</label>
-<inputtype="text" requiredplaceholder="Ваше имя" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-whitetext-sm focus:border-gold-500 focus:outline-none">
-</div>
-<div>
-<labelclass="blocktext-xs text-slate-300 mb-1">Номер телефона</label>
-<inputtype="tel" requiredplaceholder="+7 924 379-69-84" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-whitetext-sm focus:border-gold-500 focus:outline-none">
-</div>
-<div>
-<labelclass="blocktext-xs text-slate-300 mb-1">Краткое описание вопроса</label>
-<textarearows="3" placeholder="Что произошло?" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-whitetext-sm focus:border-gold-500 focus:outline-none"></textarea>
-</div>
-<buttontype="submit" class="w-full py-3.5 bg-gold-500 hover:bg-gold-400 text-navy-950 font-boldrounded-lgtransition-colors">
+    <!-- Consultation Modal -->
+    <div id="modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4">
+        <div class="bg-navy-900 border border-gold-500/40 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Связь с адвокатом</h3>
+            <p class="text-xs text-slate-400 mb-6">Оставьте контакты, и Осипова Ксения свяжется с вами в ближайшее время.</p>
+           
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">Ваше имя</label>
+                    <input type="text" required placeholder="Ваше имя" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm focus:border-gold-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">Номер телефона</label>
+                    <input type="tel" required placeholder="+7 924 379-69-84" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm focus:border-gold-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">Краткое описание вопроса</label>
+                    <textarea rows="3" placeholder="Что произошло?" class="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm focus:border-gold-500 focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold rounded-lg transition-colors">
                     Отправить заявку
-</button>
-</form>
-</div>
-</div>
+                </button>
+            </form>
+        </div>
+    </div>
 
-<!-- FeedbackBanner / Notification -->
-<div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-gold-500 text-navy-950 px-6 py-4 rounded-xl shadow-2xl font-semiboldflexitems-center gap-3">
-<i class="fa-solidfa-circle-checktext-xl"></i>
-<span>Заявка успешно отправлена! Я свяжусь с вами в ближайшее время.</span>
-</div>
+    <!-- Feedback Banner / Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-gold-500 text-navy-950 px-6 py-4 rounded-xl shadow-2xl font-semibold flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span>Заявка успешно отправлена! Я свяжусь с вами в ближайшее время.</span>
+    </div>
 
-<!-- JavaScriptLogic -->
-<script>
-        // SetYear
-document.getElementById('year').textContent = newDate().getFullYear();
+    <!-- JavaScript Logic -->
+    <script>
+        // Set Year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        // MobileMenuToggle
-constmobileBtn = document.getElementById('mobile-menu-btn');
-constmobileMenu = document.getElementById('mobile-menu');
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-mobileBtn.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // ModalFunctions
-functionopenModal() {
-document.getElementById('modal').classList.remove('hidden');
+        // Modal Functions
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
         }
 
-functioncloseModal() {
-document.getElementById('modal').classList.add('hidden');
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
         }
 
-        // FormSubmitHandler
-functionhandleFormSubmit(e) {
-e.preventDefault();
-showToast();
-e.target.reset();
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast();
+            e.target.reset();
         }
 
-functionhandleModalSubmit(e) {
-e.preventDefault();
-closeModal();
-showToast();
-e.target.reset();
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeModal();
+            showToast();
+            e.target.reset();
         }
 
-functionshowToast() {
-consttoast = document.getElementById('toast');
-toast.classList.remove('hidden');
-setTimeout(() => {
-toast.classList.add('hidden');
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
             }, 4000);
         }
 
-        // Closemodalwhenclickingoutside
-window.onclick = function(event) {
-constmodal = document.getElementById('modal');
-if (event.target == modal) {
-closeModal();
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                closeModal();
             }
         }
-</script>
+    </script>
 </body>
 </html>
 ```
