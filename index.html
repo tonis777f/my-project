@@ -1,0 +1,1042 @@
+```html
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дизайн Презентаций и Сайтов | Продающий UX/UI & Сторителлинг</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Custom Font: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#06b6d4', // Cyan gradient highlight
+                            violet: '#a855f7'  // Violet gradient highlight
+                        },
+                        dark: {
+                            bg: '#0a0d14',
+                            card: '#121824',
+                            border: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+</script>
+
+<style>
+        /* Custom Glowing & Glassmorphism Effects */
+        .glass-card {
+            background: rgba(18, 24, 36, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .glow-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(6, 182, 212, 0.1));
+            padding: 1px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+</style>
+</head>
+<body class="bg-dark-bg text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen relative overflow-x-hidden">
+
+<!-- Glowing Background Elements -->
+<div class="glow-bg bg-brand-500 w-[500px] h-[500px] -top-20 -left-20"></div>
+<div class="glow-bg bg-brand-violet w-[600px] h-[600px] top-1/3 -right-40"></div>
+<div class="glow-bg bg-brand-accent w-[450px] h-[450px] bottom-10 left-10"></div>
+
+<!-- Header / Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a href="#" class="flex items-center gap-2 group">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-violet to-brand-accent p-[1px] transition-transform duration-300 group-hover:scale-105">
+<div class="w-full h-full bg-dark-bg rounded-[11px] flex items-center justify-center">
+<span class="font-extrabold text-xl gradient-text">VP</span>
+</div>
+</div>
+<span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-500 transition-colors">
+                    Виктор <span class="text-slate-400 font-normal">| Design</span>
+</span>
+</a>
+
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8 glass-card px-6 py-2.5 rounded-full">
+<a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors">Обо мне</a>
+<a href="#services" class="text-sm text-slate-300 hover:text-white transition-colors">Услуги</a>
+<a href="#portfolio" class="text-sm text-slate-300 hover:text-white transition-colors">Портфолио</a>
+<a href="#calculator" class="text-sm text-slate-300 hover:text-white transition-colors">Калькулятор</a>
+<a href="#process" class="text-sm text-slate-300 hover:text-white transition-colors">Этапы</a>
+</nav>
+
+<!-- CTA Button & Mobile Menu Toggle -->
+<div class="flex items-center gap-4">
+<a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-brand-600 to-brand-violet hover:from-brand-500 hover:to-brand-accent transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+                    Обсудить проект
+</a>
+
+<button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+<i data-lucide="menu" class="w-6 h-6"></i>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu Modal -->
+<div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-4 pb-6 space-y-3">
+<a href="#about" class="block py-2 text-slate-300 hover:text-white font-medium">Обо мне</a>
+<a href="#services" class="block py-2 text-slate-300 hover:text-white font-medium">Услуги</a>
+<a href="#portfolio" class="block py-2 text-slate-300 hover:text-white font-medium">Портфолио</a>
+<a href="#calculator" class="block py-2 text-slate-300 hover:text-white font-medium">Калькулятор</a>
+<a href="#process" class="block py-2 text-slate-300 hover:text-white font-medium">Этапы</a>
+<a href="#contact" class="block w-full text-center py-3 mt-2 rounded-xl font-medium text-white bg-brand-600">
+                Заказать проект
+</a>
+</div>
+</header>
+
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto text-center space-y-8">
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-brand-500/30 text-xs sm:text-sm font-medium text-brand-100">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Свободен для новых проектов в этом месяце
+</div>
+
+<!-- Main Title -->
+<h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    Создаю <span class="gradient-text">презентации и сайты</span>,<br class="hidden sm:inline"> которые продают и впечатляют
+</h1>
+
+<!-- Subtitle -->
+<p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 font-light leading-relaxed">
+                    Упаковываю смыслы, стартапы и бизнес в эффектную визуальную форму. Высокая конверсия, сильный смысловой сторителлинг и современный UI/UX дизайн.
+</p>
+
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+<a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 via-brand-violet to-brand-accent hover:opacity-95 transition-all duration-300 shadow-xl shadow-brand-600/25 flex items-center justify-center gap-2 group">
+                        Рассчитать стоимость
+<i data-lucide="calculator" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+</a>
+<a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-200 glass-card hover:bg-slate-800/80 transition-all duration-300 flex items-center justify-center gap-2 border border-slate-700/50">
+                        Смотреть работы
+<i data-lucide="arrow-down-right" class="w-5 h-5"></i>
+</a>
+</div>
+
+<!-- Key Metrics / Stats -->
+<div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+<div class="glass-card p-4 rounded-2xl">
+<div class="text-3xl font-extrabold text-white gradient-text">150+</div>
+<div class="text-xs sm:text-sm text-slate-400 mt-1">Проектов сдано</div>
+</div>
+<div class="glass-card p-4 rounded-2xl">
+<div class="text-3xl font-extrabold text-white gradient-text">$12M+</div>
+<div class="text-xs sm:text-sm text-slate-400 mt-1">Привлечено инвестиций</div>
+</div>
+<div class="glass-card p-4 rounded-2xl">
+<div class="text-3xl font-extrabold text-white gradient-text">5 лет</div>
+<div class="text-xs sm:text-sm text-slate-400 mt-1">Опыта в UX/UI</div>
+</div>
+<div class="glass-card p-4 rounded-2xl">
+<div class="text-3xl font-extrabold text-white gradient-text">99%</div>
+<div class="text-xs sm:text-sm text-slate-400 mt-1">Сдача точно в срок</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Чем могу помочь</h2>
+<p class="text-3xl sm:text-4xl font-bold text-white">Решения под любые задачи бизнеса</p>
+</div>
+
+<!-- Tab Switcher -->
+<div class="flex justify-center mb-12">
+<div class="glass-card p-1.5 rounded-2xl inline-flex gap-2 border border-slate-800">
+<button id="tab-pres" onclick="switchServiceTab('presentations')" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 bg-brand-600 text-white shadow-md">
+<i data-lucide="presentation" class="w-4 h-4"></i> Презентации
+</button>
+<button id="tab-web" onclick="switchServiceTab('websites')" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 text-slate-400 hover:text-white">
+<i data-lucide="layout" class="w-4 h-4"></i> Веб-сайты
+</button>
+</div>
+</div>
+
+<!-- Presentations Grid -->
+<div id="service-presentations" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4">
+<i data-lucide="trending-up" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Инвестиционные Pitch Decks</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Презентации для инвесторов и венчурных фондов. Структурированный сторителлинг, финансовые модели и инфографика.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> До 15-20 слайдов</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Выделение UTP и рынка</li>
+</ul>
+</div>
+
+<!-- Card 2 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-violet/10 border border-brand-violet/20 flex items-center justify-center text-brand-violet mb-4">
+<i data-lucide="briefcase" class="w-4 h-4"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Коммерческие КП и Продажи</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Коммерческие предложения для B2B клиентов, слайды для менеджеров по продажам с акцентом на выгоды.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Убедительные офферы</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Редактируемый формат (PPTX)</li>
+</ul>
+</div>
+
+<!-- Card 3 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-4">
+<i data-lucide="mic" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Выступления и Вебинары</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Яркие, крупноформатные слайды для спикеров на конференциях, форумах и публичных вебинарах.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Высокая читаемость из зала</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Анимация и переходы</li>
+</ul>
+</div>
+
+<!-- Card 4 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+<i data-lucide="layers" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Корпоративные Шаблоны</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Единый брендбук и набор мастер-слайдов для сотрудников вашей компании в PowerPoint, Keynote или Google Slides.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Удобная сетка и стили</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Гайд по использованию</li>
+</ul>
+</div>
+</div>
+
+<!-- Websites Grid (Hidden by default) -->
+<div id="service-websites" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Web Card 1 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 mb-4">
+<i data-lucide="globe" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Продающие Landing Page</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Одностраничные сайты под запуск продуктов, услуг, мероприятий или рекламы с максимальной конверсией.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> UX-прототипирование</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Верстка на Tilda / Webflow</li>
+</ul>
+</div>
+
+<!-- Web Card 2 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-violet/10 border border-brand-violet/20 flex items-center justify-center text-brand-violet mb-4">
+<i data-lucide="building" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Корпоративные Сайты</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Многостраничные представительства бизнеса, отражающие статус, услуги, команду и блог компании.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Уникальный графический стиль</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> SEO-подготовка</li>
+</ul>
+</div>
+
+<!-- Web Card 3 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-4">
+<i data-lucide="shopping-bag" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Интернет-магазины</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Удобные онлайн-витрины с каталогом, корзиной, подбором фильтров и подключением платежных систем.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Оплата & Доставка</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Личный кабинет</li>
+</ul>
+</div>
+
+<!-- Web Card 4 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+<i data-lucide="code" class="w-6 h-6"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Сайты "Под ключ" (Custom)</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Индивидуальная разработка с авторской 3D/2D анимацией, кастомным JS и уникальными интерактивными фичами.
+</p>
+</div>
+<ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Figma + HTML/CSS/JS</li>
+<li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Высокая скорость загрузки</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Портфолио</h2>
+<p class="text-3xl sm:text-4xl font-bold text-white">Избранные проекты</p>
+</div>
+
+<!-- Filter tags -->
+<div class="flex flex-wrap gap-2">
+<button onclick="filterPortfolio('all')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-medium glass-card border border-brand-500 text-white" data-filter="all">Все</button>
+<button onclick="filterPortfolio('presentations')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-medium glass-card border border-slate-800 text-slate-400 hover:text-white" data-filter="presentations">Презентации</button>
+<button onclick="filterPortfolio('websites')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-medium glass-card border border-slate-800 text-slate-400 hover:text-white" data-filter="websites">Сайты</button>
+</div>
+</div>
+
+<!-- Portfolio Items Grid -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+
+<!-- Project 1 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="presentations">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Pitch Deck FinTech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-600/90 text-white backdrop-blur-sm">Pitch Deck</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">FinTech AI Startup</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Инвестиционная презентация для стартапа в сфере AI-банкинга. Привлечено $2.5M в раунде Seed.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">18 Слайдов • Figma / PPTX</span>
+<button onclick="openModal('FinTech AI Startup', 'Инвестиционная презентация с упором на аналитические графики, динамическую инфографику и финансовую модель.', 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Project 2 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="websites">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Landing SaaS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-violet/90 text-white backdrop-blur-sm">Landing Page</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">CloudSync Analytics</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Продающий лендинг для SaaS платформ с интерактивным калькулятором тарифов и темным стильным интерфейсом.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">Tilda + Custom Code</span>
+<button onclick="openModal('CloudSync Analytics', 'Лендинг с интерактивными элементами и адаптивным UX для повышения конверсии в триал на 34%.', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Project 3 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="presentations">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Keynote Speaker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-accent/90 text-slate-900 backdrop-blur-sm">Выступление</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Global Tech Forum 2025</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Слайды для ключевого спикера IT-конференции. Минимализм, 3D-графика и высокой контрастность для большого экрана.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">35 Слайдов • Keynote</span>
+<button onclick="openModal('Global Tech Forum', 'Эффектные визуальные метафоры и динамические переходы для живого выступления перед аудиторией 2000+ человек.', 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Project 4 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="websites">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/90 text-white backdrop-blur-sm">Интернет-магазин</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Luxe Interior Studio</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Сайт-каталог товаров премиальной мебели и дизайна интерьера с минималистичным стильным интерфейсом.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">Webflow / Custom UX</span>
+<button onclick="openModal('Luxe Interior Studio', 'Премиальный UI-дизайн, плавная анимация карточек и интегрированный каталог с онлайн-оплатой.', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Project 5 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="presentations">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Corporate Deck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-600/90 text-white backdrop-blur-sm">КП / B2B</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Logistics B2B Proposal</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Коммерческое предложение для международной логистической компании. Рост отклика клиентов на 40%.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">12 Слайдов • PowerPoint</span>
+<button onclick="openModal('Logistics B2B Proposal', 'Создание удобного конструктора предложения под индивидуальные запросы B2B клиентов.', 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Project 6 -->
+<div class="portfolio-item group glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-500/50 transition-all duration-300" data-category="websites">
+<div class="relative overflow-hidden aspect-video bg-slate-900">
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="Corporate Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-80"></div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-brand-violet/90 text-white backdrop-blur-sm">Корпоративный сайт</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Apex Law Group</h3>
+<p class="text-slate-400 text-sm mt-2 line-clamp-2">Корпоративный сайт юридической компании с онлайн-записью на консультацию и базой знаний.</p>
+<div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+<span class="text-xs text-slate-500">Многостраничный • Tilda</span>
+<button onclick="openModal('Apex Law Group', 'Строгий и солидный бренд-стиль, создающий высокое доверие у потенциальных клиентов.', 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80')" class="text-xs font-semibold text-brand-accent hover:underline flex items-center gap-1">
+                                Обзор <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Preview Modal -->
+<div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+<div class="glass-card bg-dark-card border border-slate-700 max-w-3xl w-full rounded-2xl overflow-hidden shadow-2xl relative animate-fade-in">
+<button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 text-slate-300 hover:text-white flex items-center justify-center">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+<div class="max-h-[85vh] overflow-y-auto">
+<img id="modal-img" src="" alt="Preview" class="w-full aspect-video object-cover">
+<div class="p-6 sm:p-8">
+<h3 id="modal-title" class="text-2xl font-bold text-white mb-2"></h3>
+<p id="modal-desc" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
+<div class="flex justify-end gap-3">
+<button onclick="closeModal()" class="px-5 py-2.5 rounded-xl text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">Закрыть</button>
+<a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-xl text-sm font-medium bg-brand-600 text-white hover:bg-brand-500">Хочу похожий проект</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Price Calculator Section -->
+<section id="calculator" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+<div class="gradient-border">
+<div class="bg-dark-card rounded-[15px] p-6 sm:p-10">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Интерактивный расчет</h2>
+<p class="text-3xl font-bold text-white">Калькулятор стоимости и сроков</p>
+<p class="text-slate-400 text-sm mt-2">Рассчитайте примерную стоимость вашего проекта за 1 минуту</p>
+</div>
+
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- Options Area -->
+<div class="lg:col-span-2 space-y-6">
+
+<!-- 1. Service Type -->
+<div>
+<label class="block text-sm font-semibold text-slate-200 mb-3">1. Тип проекта</label>
+<div class="grid grid-cols-2 gap-3">
+<button type="button" onclick="setCalcService('presentation')" id="calc-btn-pres" class="calc-type-btn p-4 rounded-xl border border-brand-500 bg-brand-500/10 text-white text-left font-medium flex items-center gap-3">
+<i data-lucide="presentation" class="w-5 h-5 text-brand-accent"></i>
+<span>Презентация</span>
+</button>
+<button type="button" onclick="setCalcService('website')" id="calc-btn-web" class="calc-type-btn p-4 rounded-xl border border-slate-800 glass-card text-slate-400 hover:text-white text-left font-medium flex items-center gap-3">
+<i data-lucide="layout" class="w-5 h-5 text-brand-violet"></i>
+<span>Веб-сайт</span>
+</button>
+</div>
+</div>
+
+<!-- 2. Quantity Slider -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-sm font-semibold text-slate-200" id="calc-qty-label">2. Количество слайдов: <span id="calc-qty-val" class="text-brand-accent font-bold text-base">10</span></label>
+</div>
+<input type="range" id="calc-range" min="5" max="40" value="10" oninput="updateCalculator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
+<div class="flex justify-between text-xs text-slate-500 mt-1">
+<span id="calc-min-text">5 слайдов</span>
+<span id="calc-max-text">40+ слайдов</span>
+</div>
+</div>
+
+<!-- 3. Additional Features -->
+<div>
+<label class="block text-sm font-semibold text-slate-200 mb-3">3. Дополнительные опции</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 rounded-xl glass-card border border-slate-800/80 cursor-pointer hover:border-slate-700">
+<input type="checkbox" id="opt-copywriting" onchange="updateCalculator()" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 bg-slate-900 border-slate-700">
+<span class="text-xs sm:text-sm text-slate-300">Написание текстов и копирайтинг смыслов</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl glass-card border border-slate-800/80 cursor-pointer hover:border-slate-700">
+<input type="checkbox" id="opt-animation" onchange="updateCalculator()" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 bg-slate-900 border-slate-700">
+<span class="text-xs sm:text-sm text-slate-300">Продвинутая анимация / Интерактивные фичи</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl glass-card border border-slate-800/80 cursor-pointer hover:border-slate-700">
+<input type="checkbox" id="opt-urgent" onchange="updateCalculator()" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 bg-slate-900 border-slate-700">
+<span class="text-xs sm:text-sm text-slate-300">Срочное выполнение (+50% к скорости)</span>
+</label>
+</div>
+</div>
+
+</div>
+
+<!-- Summary Area -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-white mb-4 pb-3 border-b border-slate-800">Итоговый расчет</h3>
+
+<div class="space-y-4">
+<div>
+<span class="text-xs text-slate-400 block">Ориентировочная стоимость:</span>
+<span id="calc-total-price" class="text-3xl font-extrabold text-white gradient-text">25 000 ₽</span>
+</div>
+
+<div>
+<span class="text-xs text-slate-400 block">Срок исполнения:</span>
+<span id="calc-total-days" class="text-lg font-semibold text-slate-200">4-6 рабочих дней</span>
+</div>
+
+<div class="p-3 rounded-xl bg-brand-500/10 border border-brand-500/20 text-xs text-slate-300 space-y-1">
+<p class="font-medium text-brand-accent">В стоимость входит:</p>
+<p>• Анализ целевой аудитории</p>
+<p>• Уникальный UX/UI дизайн</p>
+<p>• 2 круга правок бесплатно</p>
+</div>
+</div>
+</div>
+
+<button onclick="applyCalcToForm()" class="w-full mt-6 py-3 px-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-600 to-brand-violet hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                Зафиксировать цену <i data-lucide="arrow-right" class="w-4 h-4"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Process Workflow Section -->
+<section id="process" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Как проходит работа</h2>
+<p class="text-3xl sm:text-4xl font-bold text-white">5 шагов к идеальному результату</p>
+</div>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<!-- Step 1 -->
+<div class="glass-card p-6 rounded-2xl relative border border-slate-800">
+<span class="text-4xl font-black text-slate-800 absolute top-4 right-4">01</span>
+<div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-500 flex items-center justify-center mb-4">
+<i data-lucide="file-text" class="w-5 h-5"></i>
+</div>
+<h3 class="font-bold text-white mb-2">Бриф и Анализ</h3>
+<p class="text-xs text-slate-400">Обсуждаем задачи, аудиторию, изучать конкурентов и формируем структурированное ТЗ.</p>
+</div>
+
+<!-- Step 2 -->
+<div class="glass-card p-6 rounded-2xl relative border border-slate-800">
+<span class="text-4xl font-black text-slate-800 absolute top-4 right-4">02</span>
+<div class="w-10 h-10 rounded-xl bg-brand-violet/20 text-brand-violet flex items-center justify-center mb-4">
+<i data-lucide="compass" class="w-5 h-5"></i>
+</div>
+<h3 class="font-bold text-white mb-2">Концепция</h3>
+<p class="text-xs text-slate-400">Разрабатываем структуру, прототип и 2-3 варианта визуальной стилистики.</p>
+</div>
+
+<!-- Step 3 -->
+<div class="glass-card p-6 rounded-2xl relative border border-slate-800">
+<span class="text-4xl font-black text-slate-800 absolute top-4 right-4">03</span>
+<div class="w-10 h-10 rounded-xl bg-brand-accent/20 text-brand-accent flex items-center justify-center mb-4">
+<i data-lucide="palette" class="w-5 h-5"></i>
+</div>
+<h3 class="font-bold text-white mb-2">Дизайн</h3>
+<p class="text-xs text-slate-400">Отрисовываем весь макет: типографика, уникальная графика, верстка слайдов или блоков.</p>
+</div>
+
+<!-- Step 4 -->
+<div class="glass-card p-6 rounded-2xl relative border border-slate-800">
+<span class="text-4xl font-black text-slate-800 absolute top-4 right-4">04</span>
+<div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+<i data-lucide="code-2" class="w-5 h-5"></i>
+</div>
+<h3 class="font-bold text-white mb-2">Верстка / Сборка</h3>
+<p class="text-xs text-slate-400">Переносим макет на Tilda/Webflow или верстаем исходники в PPTX / Keynote.</p>
+</div>
+
+<!-- Step 5 -->
+<div class="glass-card p-6 rounded-2xl relative border border-slate-800">
+<span class="text-4xl font-black text-slate-800 absolute top-4 right-4">05</span>
+<div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+<i data-lucide="check-circle-2" class="w-5 h-5"></i>
+</div>
+<h3 class="font-bold text-white mb-2">Сдача Проекта</h3>
+<p class="text-xs text-slate-400">Передаем все исходники, обучаем редактированию и оказываем техническую поддержку.</p>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Отзывы</h2>
+<p class="text-3xl sm:text-4xl font-bold text-white">Что говорят клиенты</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Review 1 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4 gap-1">
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+</div>
+<p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "Виктор сделал для нашего AI-стартапа питч-дек буквально за 5 дней. Инвесторы на встрече отдельно отметили понятную финансовую инфографику. Сразу закрыли раунд!"
+</p>
+</div>
+<div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+<div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center font-bold text-white">АМ</div>
+<div>
+<div class="font-bold text-white text-sm">Александр Макаров</div>
+<div class="text-xs text-slate-500">CEO, NeuroTech</div>
+</div>
+</div>
+</div>
+
+<!-- Review 2 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4 gap-1">
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+</div>
+<p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "Заказывали промо-лендинг для онлайн-курса. Дизайн получился космос — стильный, сочный, мобильная версия летает. Конверсия в заявку выросла почти в два раза!"
+</p>
+</div>
+<div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+<div class="w-10 h-10 rounded-full bg-brand-violet flex items-center justify-center font-bold text-white">ЕК</div>
+<div>
+<div class="font-bold text-white text-sm">Елена Ковалева</div>
+<div class="text-xs text-slate-500">Маркетолог, SkillAcademy</div>
+</div>
+</div>
+</div>
+
+<!-- Review 3 -->
+<div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4 gap-1">
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+</div>
+<p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "Отличная работа по разработке корпоративной презентации B2B услуг. Без лишних вопросов, четко по правкам, сдал даже на день раньше срока. Рекомендую!"
+</p>
+</div>
+<div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+<div class="w-10 h-10 rounded-full bg-brand-accent flex items-center justify-center font-bold text-slate-900">ДБ</div>
+<div>
+<div class="font-bold text-white text-sm">Дмитрий Белов</div>
+<div class="text-xs text-slate-500">Директор по развитию, LogisCorp</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12">
+<!-- Contact Info -->
+<div class="space-y-6">
+<div>
+<h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Контакты</h2>
+<p class="text-3xl sm:text-4xl font-bold text-white">Давайте обсудим ваш проект</p>
+</div>
+<p class="text-slate-300 text-sm leading-relaxed">
+                        Заполните форму или напишите мне напрямую в мессенджеры. Я отвечу в течение 15 минут, и мы обсудим детали, сроки и стоимость вашего проекта.
+</p>
+
+<!-- Quick Contact Buttons -->
+<div class="space-y-3 pt-4">
+<a href="https://t.me/" target="_blank" class="glass-card p-4 rounded-xl border border-slate-800 hover:border-brand-500 flex items-center gap-4 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+<i data-lucide="send" class="w-6 h-6"></i>
+</div>
+<div>
+<div class="text-xs text-slate-400">Быстрый ответ в Telegram</div>
+<div class="text-white font-medium">@victor_design_pro</div>
+</div>
+</a>
+
+<a href="https://wa.me/" target="_blank" class="glass-card p-4 rounded-xl border border-slate-800 hover:border-emerald-500 flex items-center gap-4 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+<i data-lucide="message-circle" class="w-6 h-6"></i>
+</div>
+<div>
+<div class="text-xs text-slate-400">WhatsApp</div>
+<div class="text-white font-medium">+7 (999) 000-00-00</div>
+</div>
+</a>
+
+<a href="mailto:hello@example.com" class="glass-card p-4 rounded-xl border border-slate-800 hover:border-brand-violet flex items-center gap-4 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-brand-violet/20 text-brand-violet flex items-center justify-center group-hover:scale-110 transition-transform">
+<i data-lucide="mail" class="w-6 h-6"></i>
+</div>
+<div>
+<div class="text-xs text-slate-400">Электронная почта</div>
+<div class="text-white font-medium">victor.design@example.com</div>
+</div>
+</a>
+</div>
+</div>
+
+<!-- Lead Form -->
+<div class="glass-card p-8 rounded-2xl border border-slate-800 relative">
+<form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+<div>
+<label class="block text-xs font-semibold text-slate-300 mb-1">Ваше имя *</label>
+<input type="text" required placeholder="Иван" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+</div>
+
+<div>
+<label class="block text-xs font-semibold text-slate-300 mb-1">Telegram / WhatsApp / Email *</label>
+<input type="text" required placeholder="@username или +7 (999) ..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+</div>
+
+<div>
+<label class="block text-xs font-semibold text-slate-300 mb-1">Тип услуги</label>
+<select id="form-service-select" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 focus:outline-none focus:border-brand-500 text-sm">
+<option value="Презентация">Презентация</option>
+<option value="Веб-сайт">Веб-сайт (Landing Page / Корпоративный)</option>
+<option value="Презентация + Сайт">Комплекс (Презентация + Сайт)</option>
+</select>
+</div>
+
+<div>
+<label class="block text-xs font-semibold text-slate-300 mb-1">Детали проекта / Задачи</label>
+<textarea id="form-details" rows="3" placeholder="Опишите вкратце ваш продукт, количество слайдов/страниц или прикрепите ссылку на ТЗ..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm"></textarea>
+</div>
+
+<button type="submit" class="w-full py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 via-brand-violet to-brand-accent hover:opacity-90 transition-all shadow-lg shadow-brand-600/20 text-sm flex items-center justify-center gap-2">
+<span>Отправить заявку</span>
+<i data-lucide="send" class="w-4 h-4"></i>
+</button>
+</form>
+
+<!-- Success Feedback State -->
+<div id="form-success" class="hidden absolute inset-0 bg-dark-card/95 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center p-8 text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<i data-lucide="check-circle" class="w-10 h-10"></i>
+</div>
+<h3 class="text-2xl font-bold text-white">Заявка отправлена!</h3>
+<p class="text-slate-300 text-sm max-w-xs">
+                            Спасибо! Я уже получил ваше сообщение и свяжусь с вами в ближайшие 15 минут.
+</p>
+<button onclick="resetForm()" class="px-5 py-2.5 rounded-xl text-xs font-medium bg-slate-800 text-slate-300 hover:text-white">
+                            Отправить еще раз
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-slate-800/80 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+<div>
+                © 2026 Виктор. Все права защищены. Дизайн презентаций и веб-сайтов.
+</div>
+<div class="flex gap-6">
+<a href="#about" class="hover:text-slate-300 transition-colors">Обо мне</a>
+<a href="#portfolio" class="hover:text-slate-300 transition-colors">Портфолио</a>
+<a href="#contact" class="hover:text-slate-300 transition-colors">Контакты</a>
+</div>
+</div>
+</footer>
+
+<!-- Scripts -->
+<script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-dark-bg/80', 'backdrop-blur-md', 'border-b', 'border-slate-800/50');
+            } else {
+                nav.classList.remove('bg-dark-bg/80', 'backdrop-blur-md', 'border-b', 'border-slate-800/50');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Services Tab Switcher
+        function switchServiceTab(type) {
+            const presGrid = document.getElementById('service-presentations');
+            const webGrid = document.getElementById('service-websites');
+            const tabPres = document.getElementById('tab-pres');
+            const tabWeb = document.getElementById('tab-web');
+
+            if (type === 'presentations') {
+                presGrid.classList.remove('hidden');
+                webGrid.classList.add('hidden');
+                tabPres.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 bg-brand-600 text-white shadow-md";
+                tabWeb.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 text-slate-400 hover:text-white";
+            } else {
+                webGrid.classList.remove('hidden');
+                presGrid.classList.add('hidden');
+                tabWeb.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 bg-brand-violet text-white shadow-md";
+                tabPres.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 text-slate-400 hover:text-white";
+            }
+        }
+
+        // Portfolio Filter
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.port-filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = "port-filter-btn px-4 py-2 rounded-xl text-xs font-medium glass-card border border-brand-500 text-white";
+                } else {
+                    btn.className = "port-filter-btn px-4 py-2 rounded-xl text-xs font-medium glass-card border border-slate-800 text-slate-400 hover:text-white";
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Portfolio Modal Functions
+        function openModal(title, desc, imgSrc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Interactive Price Calculator Logic
+        let selectedService = 'presentation';
+
+        function setCalcService(type) {
+            selectedService = type;
+            const btnPres = document.getElementById('calc-btn-pres');
+            const btnWeb = document.getElementById('calc-btn-web');
+            const qtyLabel = document.getElementById('calc-qty-label');
+            const minText = document.getElementById('calc-min-text');
+            const maxText = document.getElementById('calc-max-text');
+            const range = document.getElementById('calc-range');
+
+            if (type === 'presentation') {
+                btnPres.className = "calc-type-btn p-4 rounded-xl border border-brand-500 bg-brand-500/10 text-white text-left font-medium flex items-center gap-3";
+                btnWeb.className = "calc-type-btn p-4 rounded-xl border border-slate-800 glass-card text-slate-400 hover:text-white text-left font-medium flex items-center gap-3";
+
+                range.min = 5;
+                range.max = 40;
+                range.value = 10;
+                minText.innerText = "5 слайдов";
+                maxText.innerText = "40+ слайдов";
+            } else {
+                btnWeb.className = "calc-type-btn p-4 rounded-xl border border-brand-violet bg-brand-violet/10 text-white text-left font-medium flex items-center gap-3";
+                btnPres.className = "calc-type-btn p-4 rounded-xl border border-slate-800 glass-card text-slate-400 hover:text-white text-left font-medium flex items-center gap-3";
+
+                range.min = 1;
+                range.max = 10;
+                range.value = 1;
+                minText.innerText = "1 страница (Landing)";
+                maxText.innerText = "10+ страниц";
+            }
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const range = document.getElementById('calc-range');
+            const qtyVal = document.getElementById('calc-qty-val');
+            const qtyLabel = document.getElementById('calc-qty-label');
+            const totalPriceEl = document.getElementById('calc-total-price');
+            const totalDaysEl = document.getElementById('calc-total-days');
+
+            const val = parseInt(range.value);
+
+            const optCopywriting = document.getElementById('opt-copywriting').checked;
+            const optAnimation = document.getElementById('opt-animation').checked;
+            const optUrgent = document.getElementById('opt-urgent').checked;
+
+            let price = 0;
+            let days = 0;
+
+            if (selectedService === 'presentation') {
+                qtyLabel.innerHTML = `2. Количество слайдов: <span class="text-brand-accent font-bold text-base">${val}</span>`;
+                price = val * 2000; // 2000 rub per slide
+                days = Math.max(3, Math.ceil(val / 3));
+
+                if (optCopywriting) price += val * 800;
+                if (optAnimation) price += val * 500;
+            } else {
+                qtyLabel.innerHTML = `2. Количество страниц/экранов: <span class="text-brand-violet font-bold text-base">${val}</span>`;
+                price = 25000 + (val - 1) * 8000; // Base landing 25k + extra pages
+                days = 5 + (val - 1) * 2;
+
+                if (optCopywriting) price += 10000;
+                if (optAnimation) price += 8000;
+            }
+
+            if (optUrgent) {
+                price *= 1.3; // +30% for urgent
+                days = Math.max(2, Math.floor(days * 0.6));
+            }
+
+            totalPriceEl.innerText = `${Math.round(price).toLocaleString('ru-RU')} ₽`;
+            totalDaysEl.innerText = `${days}-${days + 2} рабочих дней`;
+        }
+
+        function applyCalcToForm() {
+            const serviceSelect = document.getElementById('form-service-select');
+            const formDetails = document.getElementById('form-details');
+            const calcPrice = document.getElementById('calc-total-price').innerText;
+            const calcDays = document.getElementById('calc-total-days').innerText;
+
+            serviceSelect.value = selectedService === 'presentation' ? 'Презентация' : 'Веб-сайт';
+            formDetails.value = `Расчет из калькулятора: ${selectedService === 'presentation' ? 'Презентация' : 'Веб-сайт'}, примерная стоимость ${calcPrice}, срок ${calcDays}.`;
+
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+
+        function resetForm() {
+            document.getElementById('lead-form').reset();
+            document.getElementById('form-success').classList.add('hidden');
+        }
+
+        // Initialize Calculator Default State
+        updateCalculator();
+</script>
+</body>
+</html>
